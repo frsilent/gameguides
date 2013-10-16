@@ -1,0 +1,248 @@
+caseyfoster CSGOGuides.com: oh you got 2 steam accounts
+caseyfoster CSGOGuides.com: VAC BAN?!?!?!
+Roland: yep
+Roland: lol I mentioned that
+caseyfoster CSGOGuides.com: nice cheats
+Roland: tried to right a cheat...didn't do so well
+Roland: QQ
+Roland: *write
+caseyfoster CSGOGuides.com: lol
+caseyfoster CSGOGuides.com: right
+Roland: so what's up?
+caseyfoster CSGOGuides.com: so fianlly going to start taking some big steps with netcode since we got word of a few things related to the game
+caseyfoster CSGOGuides.com: you down to come in and just web it up for a stake in the company
+caseyfoster CSGOGuides.com: nice little side cash/project
+Roland: yeah I'm up for it, do you have any mockups or details on the requirements?
+caseyfoster CSGOGuides.com: mockups no. im not big on design. im big on functionality and using proven concepts
+caseyfoster CSGOGuides.com: and tbh. skill capped has done it perfect
+caseyfoster CSGOGuides.com: my squeeze page is better
+Roland: lol
+caseyfoster CSGOGuides.com: but the way the user comes to the site. buys premium. goes straight to watching content
+caseyfoster CSGOGuides.com: is the way that the premium content sites work the best
+caseyfoster CSGOGuides.com: my site has a bunch of info/forums/gaming sections ect
+caseyfoster CSGOGuides.com: and it clutters the page and the user exp
+caseyfoster CSGOGuides.com: there are tons of people that are in the netcode community and dont even know we have a premium service
+caseyfoster CSGOGuides.com: thats because its through a forum and sucks
+caseyfoster CSGOGuides.com: skill capped also has a few functions that really makes their site/content nice
+caseyfoster CSGOGuides.com: and i have a few ideas of things that can really take netcode to the next level
+caseyfoster CSGOGuides.com: the real money is to be made one we launch the LoL and new game title sections
+caseyfoster CSGOGuides.com: we have connects with pretty much every pro gamer out there since we are pro cs players and they all come to cs
+caseyfoster CSGOGuides.com: we know the best COD teams and DOTA and top LoL players ect
+Roland: awesome, I'm listening just taking notes fyi
+caseyfoster CSGOGuides.com: and if there was a way to click a button and create a new site/skin it for new games
+caseyfoster CSGOGuides.com: it could get ridiculous
+caseyfoster CSGOGuides.com: and basically build a network of gaming related sites
+caseyfoster CSGOGuides.com: and we launch future services/ect through the brand
+caseyfoster CSGOGuides.com: and obv im typing all this because its time to go there. start pulling in 20/30k/month
+caseyfoster CSGOGuides.com: skill capped from one game has been pulling 70k/month for the last 3 years
+caseyfoster CSGOGuides.com: esea has been pulling 250k/month for 5 years from a gaming service
+caseyfoster CSGOGuides.com: we are partnered with soon to be esea competitors and theres just a lot going on with the esports world now in the us
+caseyfoster CSGOGuides.com: and if we get this right, there is potential to hit big
+Roland: that's pretty freaking awesome
+caseyfoster CSGOGuides.com: from something that requires little to no time afterthe initial time investment
+caseyfoster CSGOGuides.com: and im sure you would love to work in the gaming world
+Roland: yeah definitely man
+caseyfoster CSGOGuides.com: lol
+Roland: this sounds pretty exciting
+Roland: lol
+caseyfoster CSGOGuides.com: we have a huge name/brand and tons of connects
+caseyfoster CSGOGuides.com: for pretty much EVERYTHING except a sick dev
+caseyfoster CSGOGuides.com: lol
+caseyfoster CSGOGuides.com: right when we launched netcode. CSS was huge. we had 600 premiums paying 10/month,. pulling 6k/month with little to no content.
+caseyfoster CSGOGuides.com: cs has been dead until literally 3 months ago
+caseyfoster CSGOGuides.com: and its been pickingback up, and i cant even fathom what the numbers will be when the game goes free toplay
+caseyfoster CSGOGuides.com: and people understand the potential to make real money from they game
+caseyfoster CSGOGuides.com: they will take it serious and do what it takes to get good
+caseyfoster CSGOGuides.com: if we have a solid site, that converts high
+caseyfoster CSGOGuides.com: it could get real good
+caseyfoster CSGOGuides.com: so basically im just trying to sell you on the idea and the possiblity
+Roland: no I understand man
+caseyfoster CSGOGuides.com: you interested in talking more/taking on this project obv has a side thing
+Roland: yeah definitely
+caseyfoster CSGOGuides.com: do you have all the skills needed?
+Roland: I'm thinking of the technical constraints and throwing something up
+caseyfoster CSGOGuides.com: i dont know dick about coding
+caseyfoster CSGOGuides.com: nor what is needed
+caseyfoster CSGOGuides.com: i know how the business works, how to build it, have the connects and a great understanding for how the front end should work
+Roland: honestly the only assistance I would need is someone who can a) write a solid description of the required functionality; whether that be through user stories, skype sessioons, etc
+Roland: b) someone to discuss the UX
+caseyfoster CSGOGuides.com: i can do the require functionality
+caseyfoster CSGOGuides.com: i can do the user stories, we call them wireframes if we are talking aboutthe same thing, or the site flow
+caseyfoster CSGOGuides.com: and i can do the ux as well
+caseyfoster CSGOGuides.com: but if you mean the coding side of it
+caseyfoster CSGOGuides.com: yeah not me for tha lol
+Roland: yeah kinda/sorta; user stories just being like "An anonymous user should be able to login/register."; "A registered user should be able to sign up for a premium service." etc etc
+Roland: common in agile development process
+Roland: I can handle all the code; django/jquery would probably be the best way to handle it
+caseyfoster CSGOGuides.com: im not familiar with these types of developemtn proceeses that are common with others. ive just learned as ive gone. no schooling. just did it myself and learned from exp
+Roland: all good, it's mostly just what I'm familiar with & know works best
+caseyfoster CSGOGuides.com: but im sure i can do it
+caseyfoster CSGOGuides.com: but yeah basically a site. user comes to it. buys premium. gives them access to premium content. once their billing ends/canceled premium access removed.
+Roland: alright
+caseyfoster CSGOGuides.com: very basic
+Roland: I'm going to see about maybe getting a barebones site generated then
+Roland: I think my best route would be to either host it myself or throw it on aws
+caseyfoster CSGOGuides.com: but back end features more for admins. would be referral programs. premium account tracking ect
+Roland: just a demo so you could login to something like demo.rheintze.com
+caseyfoster CSGOGuides.com: ok cool
+Roland: & point out stupid shit I might be doing
+Roland: give me a bit of time for that though
+caseyfoster CSGOGuides.com: yeah for sure
+caseyfoster CSGOGuides.com: any idea on what you would want as far as a stake in the company/% of revenue
+Roland: hmm well I don't want to shoot numbers like that; I haven't done a lot of freelance and don't want to undersell myself or scare you off...this sounds like a *huge* scope of work but very doable
+Roland: if you're okay with it I'd like to talk to some buddies of mine first who have a) their own companies or b) a lot of freelance work
+Roland: but Mike'll tell you money's not a huge thing for me...I'd rather make a friendship & partnership with you
+Roland: than try to fuck you over at any point, lol
+caseyfoster CSGOGuides.com: yeah sure. i mean your the best judge of your time/work
+Roland: seems like trust/honesty has worked best for me in the past =D
+caseyfoster CSGOGuides.com: and yeah im all about good long relationships
+caseyfoster CSGOGuides.com: ive had the same partners with netcode since day 1
+caseyfoster CSGOGuides.com: dazed (sam) im sure you know who he is
+caseyfoster CSGOGuides.com: is 50% of netcode. he makes content, continunes to play pro/world wide promote netcode ect
+caseyfoster CSGOGuides.com: and once he build the super team we sponsor him ect
+Roland: ah cool
+caseyfoster CSGOGuides.com: him and robby with eoreality
+caseyfoster CSGOGuides.com: he hosts all my servers/brush/helps with server stuff ect
+Roland: yeah I've seen him playing but haven't ever talked to the guy
+caseyfoster CSGOGuides.com: but yeah
+caseyfoster CSGOGuides.com: dazed?
+Roland: yep
+caseyfoster CSGOGuides.com: yeah he doesnt really talk to people he doesnt know
+caseyfoster CSGOGuides.com: were kinda like that
+Roland: lol
+caseyfoster CSGOGuides.com: when newb cs players want to ask a million questions
+caseyfoster CSGOGuides.com: it gets old
+Roland: nah I understand; I used to hangout around the e7/phatfish guys a lot
+caseyfoster CSGOGuides.com: but yeah hes been around since day 1
+caseyfoster CSGOGuides.com: who is your isp?
+Roland: and even at tiny LANs they would get harrassed by people they didn't even remotely know
+Roland: right now it's verizon fios in Tampa
+caseyfoster CSGOGuides.com: yeah thats how it works when your a pro
+caseyfoster CSGOGuides.com: i thought you live in atl
+Roland: no my mom lives in sandy springs
+Roland: & that's where I grew up
+caseyfoster CSGOGuides.com: ah i see on your esea profile atlanta
+Roland: sorry, I should probably change that
+caseyfoster CSGOGuides.com: all good
+caseyfoster CSGOGuides.com: im ready to take it to the next level. start pulling in some dough. get an office. hire some video dudes and devs
+caseyfoster CSGOGuides.com: and just keep rolling
+caseyfoster CSGOGuides.com: like what skill capped has done
+caseyfoster CSGOGuides.com: fly in the pros. have them make tons of content in house. put their webcams on the videos. get the videos done REALLY well
+Roland: would working remote be an option still then?
+caseyfoster CSGOGuides.com: thats the way to do it
+Roland: I could cover expense if necessary for travel
+Roland: if you had a meeting or something
+caseyfoster CSGOGuides.com: yeah for sure obv as a partner you make your own decsisons
+Roland: alrighty
+caseyfoster CSGOGuides.com: but thats the way to do it
+caseyfoster CSGOGuides.com: cuz right now. gettin the content made by the players online is only OK, its not the best
+caseyfoster CSGOGuides.com: but with more revenue, video production could go through the roof
+caseyfoster CSGOGuides.com: and thats one thing netcode has been lacking on
+caseyfoster CSGOGuides.com: there could be so much more to learn from the videos if there was a real video production person
+caseyfoster CSGOGuides.com: basically we will pay a pro anywhere from $50-100 per video, it has worked in the past
+Roland: you mean record, edit, or do it all?
+caseyfoster CSGOGuides.com: but what i see being much better, is flying them to office, record the commentary/guide+webcam pov
+caseyfoster CSGOGuides.com: edit into video
+caseyfoster CSGOGuides.com: have them bang out a bunch of videos on their specialty
+Roland: yeah...for a few thousand you could get like 100 videos
+Roland: instead of paying individually
+caseyfoster CSGOGuides.com: yeah
+caseyfoster CSGOGuides.com: and they would feel really good about actually doing something with themself
+caseyfoster CSGOGuides.com: and we could get voice overs/different angles amde
+caseyfoster CSGOGuides.com: made*
+Roland: yeah definitely, it's the little things people appreciate
+caseyfoster CSGOGuides.com: the sky is the limit with that
+Roland: give them donuts and tell them how happy we are to see them :P
+caseyfoster CSGOGuides.com: but yeah. for $50-100. they just record their screen with xsplit and send me the video
+caseyfoster CSGOGuides.com: and then i edit/clip/render/upload/post
+caseyfoster CSGOGuides.com: but content is king
+caseyfoster CSGOGuides.com: and if you can make king content. you are golden
+Roland: lol, yeah I've seen the quality of your content in bits and pieces
+Roland: it's why you don't really have a competitior
+caseyfoster CSGOGuides.com: yeah and also no one else can do it lol
+caseyfoster CSGOGuides.com: we are the best players in the game and dazed will be the best player in cs for a long time
+caseyfoster CSGOGuides.com: so if anyone was to try and make content
+caseyfoster CSGOGuides.com: it would be inferior
+Roland: <--psyched
+Roland: I love to code but it sucks not having a say in functionality which is kind of why I went to a startup
+Roland: this would be a lot more freedom & without all the middlemen
+caseyfoster CSGOGuides.com: yeah for sure
+caseyfoster CSGOGuides.com: and it will be your baby
+caseyfoster CSGOGuides.com: trust me when its something of your own
+Roland: since your marketing is kind of already established
+caseyfoster CSGOGuides.com: im also an seo/marketing expert lol
+caseyfoster CSGOGuides.com: and yeah i mean im sure you would have some sick ideas for functionaility that you could do yourself
+caseyfoster CSGOGuides.com: basically the lpkane of netcode
+caseyfoster CSGOGuides.com: but not a complete faggot LOL
+Roland: rofl
+Roland: yeah I told you about my random-ass ban like 5 years ago that I still haven't gotten over
+Roland: who the fuck gets a single ban for "ban evasion"???
+Roland: that would imply that I had been banned before
+caseyfoster CSGOGuides.com: haha
+caseyfoster CSGOGuides.com: yeah esea is kinda funky with stuff like that
+Roland: their response to my email was pretty much like "Yes we tracked the user 'r4ged^' to this account
+Roland: like...dafuq I thought I was the only cs player in a 15mile radius at the time
+caseyfoster CSGOGuides.com: hahaa
+caseyfoster CSGOGuides.com: but yeah man add me on sykep
+caseyfoster CSGOGuides.com: im not on steam 24/7
+caseyfoster CSGOGuides.com: caseyfoster
+caseyfoster CSGOGuides.com: is my name on skype
+Roland: alrighty, also my email's rheintze@linux.com
+caseyfoster CSGOGuides.com: ok
+caseyfoster CSGOGuides.com: added'
+caseyfoster CSGOGuides.com: wat you doing up
+Roland: lol, scoping =D
+Roland: I'm excited about the project
+Roland: but mostly just making notes of things to start sketching out tomorrow
+Roland: I think the best thing for us to do is get a prototype/initial design uploaded so I can keep you in the loop
+Roland: I'm planning to lean heavily on you for the UX and front-end interface
+Roland: no use in me spending a day on a feature that doesn't make any sense
+caseyfoster CSGOGuides.com: ah nice man. yeah i can do the ux front end stuff
+caseyfoster CSGOGuides.com: i can do wireframes with basic explanations
+caseyfoster CSGOGuides.com: http://www.curse.com/
+caseyfoster CSGOGuides.com: do you see
+caseyfoster CSGOGuides.com: top left
+caseyfoster CSGOGuides.com: it has curse sites
+caseyfoster CSGOGuides.com: and then a list of all of their sites
+caseyfoster CSGOGuides.com: i want to do something similar but with all the netcode properties
+caseyfoster CSGOGuides.com: http://www.netcodeilluminati.com/brush/
+caseyfoster CSGOGuides.com: we touched on the concept here
+caseyfoster CSGOGuides.com: but with future game title launches there will need to be a bette bar
+Roland: ah gotcha
+caseyfoster CSGOGuides.com: better* bar for the actual properties
+caseyfoster CSGOGuides.com: or however we can figure out the best way to do it
+caseyfoster CSGOGuides.com: but yeah man, with your technical skills im sure you can come up with cooler backend kind of things that will provide value of some sort
+caseyfoster CSGOGuides.com: ways to view data or something that we can learn from and know what to focus more on
+Roland: yeah, are you thinking of that top-left submenu pointing to a new url/application?
+Roland: or re-theming the same app?
+caseyfoster CSGOGuides.com: yeah
+caseyfoster CSGOGuides.com: nah a new url/site
+Roland: oh alright
+Roland: so your intention then is *not* to have the same exact site but just different content when you go to a different "site"
+Roland: wait I phrased that poorly
+Roland: (same site with different content) <--not your goal
+caseyfoster CSGOGuides.com: well different titles will need some tweaking
+caseyfoster CSGOGuides.com: but shit im down to do the same site with different content too
+caseyfoster CSGOGuides.com: games like LoL have different game types
+Roland: oh that's true
+Roland: but it still might be *close enough*
+caseyfoster CSGOGuides.com: yeah
+caseyfoster CSGOGuides.com: but i think something that could provide huge value
+Roland: if it works for you I can just focus on a single site and then cross that bridge when we get to it of having very similar functionality for LoL?
+caseyfoster CSGOGuides.com: is a quick way to just spawn a whole new site/page for a new game title like with the click of a button
+caseyfoster CSGOGuides.com: yeah of course
+caseyfoster CSGOGuides.com: id say the best way
+caseyfoster CSGOGuides.com: would be to make one site, prove it works tweak it, then roll out copies of same said site for other titles
+caseyfoster CSGOGuides.com: which would be much less work
+Roland: yep
+Roland: well with django apps a project (site) is split into apps if you do it the right way
+caseyfoster CSGOGuides.com: but for now, id say just focus on the CSGO site
+Roland: ie "book a lesson" would be a unique *app*
+caseyfoster CSGOGuides.com: ah sick
+caseyfoster CSGOGuides.com: since we have all the content everything for it
+Roland: so you can roll out a new project and choose which apps to include in it and set its unique settings
+Roland: ie include (training videos app) with settings video_database is counter-strike
+Roland: so I'll focus on imitating skill-cap maybe then for GO
+Roland: & remind myself to keep that kind of flexibility (loose coupling)
+caseyfoster CSGOGuides.com: yeah
+caseyfoster CSGOGuides.com: that makes sense
