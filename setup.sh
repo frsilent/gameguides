@@ -11,6 +11,10 @@ virtualenv --no-site-packages --python=python3.3 dev_env
 . dev_env/bin/activate
 pip install -r requirements/local.txt
 
+echo "Creating the database"
+sudo -u postgres dropdb gameguides
+sudo -u postgres createdb gameguides -T template0 -E UTF8
+
 echo "Use these:
 echo "./game_guides/manage.py syncdb"
 echo "./game_guides/manage.py migrate"

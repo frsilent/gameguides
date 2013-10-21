@@ -1,0 +1,11 @@
+##################################################################################
+#	This needs to be a compiled list of tasks for us to work on					##
+#	Eventually it should be replaced with something like Pivotal Tracker for	##
+#	Casey to submit User Stories to the dev team.								##	
+##################################################################################
+
+* Make sure bootstrap/jquery are the latest & greatest. Replace if necessary
+* Review Django South Module
+* Review django-braces Module
+* Make the landing/home page match casey's mockup thingy
+* Establish frontend & URLs to the Contributors app
