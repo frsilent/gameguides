@@ -15,7 +15,7 @@ echo "Creating the database"
 sudo -u postgres dropdb gameguides
 sudo -u postgres createdb gameguides -T template0 -E UTF8
 
-echo "Use these:
+echo "Use these:"
 echo "./game_guides/manage.py syncdb"
 echo "./game_guides/manage.py migrate"
 echo "and ./game_guides/manage.py runserver --settings=game_guides.settings.local"

@@ -25,12 +25,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': normpath(join(DJANGO_ROOT, 'default.db')),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': normpath(join(DJANGO_ROOT, 'default.db')),
+        'NAME': 'gameguides',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
     }
 }
 ########## END DATABASE CONFIGURATION
