@@ -4,7 +4,6 @@
 #	Casey to submit User Stories to the dev team.								##	
 ##################################################################################
 
-* Make sure bootstrap/jquery are the latest & greatest. Replace if necessary
 * Review Django South Module
 * Review django-braces Module
 * Make the landing/home page match casey's mockup thingy
