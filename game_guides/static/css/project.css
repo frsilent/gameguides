@@ -1,1 +1,7 @@
 /*! project specific CSS goes here. */
+
+/* OVERRIDES BOOTSTRAP */
+.navbar .nav {
+	float: right;
+}
+/* END OVERRIDES BOOTSTRAP */
