@@ -73,6 +73,7 @@ USE_L10N = True
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
+AUTH_PROFILE_MODULE = "accounts.UserProfile"
 ########## END GENERAL CONFIGURATION
 
 
@@ -198,6 +199,7 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    'accounts',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

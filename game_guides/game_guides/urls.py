@@ -6,10 +6,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
+    # url(r'^$', TemplateView.as_view(template_name='base.html')),
 
     # Examples:
-    # url(r'^$', 'game_guides.views.home', name='home'),
+    url(r'^$', 'game_guides.views.home', name='home'),
     # url(r'^game_guides/', include('game_guides.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
