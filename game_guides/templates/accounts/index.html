@@ -1,0 +1,42 @@
+{% extends 'base.htm' %}
+
+
+
+
+{% comment %}
+
+{% block navigation %}
+    {% with 'stores' as menu_select %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="container third">
+            <div class="grid">
+                <h3 style="margin-bottom: 10px;">Choice Sets</h3>
+                <ul class="navigation-list">
+                    {% for choice_set in choice_sets %}
+                        <li {% if choice_set.id == curr_choice_set.id %} class="current" {% endif %}>
+                            <a href="{% menu_url 'core-edit_choice_set' choice_set_id=choice_set.id %}">{{ choice_set.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a id="add-new-store" href="{% menu_url 'core-add_choice_set' %}">
+                    <strong>Add Choice Set +</strong>
+                </a>
+            </div>
+        </div>
+
+        <div class="container twothird">
+            <div class="grid">
+                {% block right_column %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% endcomment %}
