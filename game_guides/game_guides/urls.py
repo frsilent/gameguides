@@ -8,8 +8,8 @@ urlpatterns = patterns('',
 
     url(r'^$', 'game_guides.views.home', name='home'),
 
-    # App URLs:
-    url(r'^accounts/',          include('accounts.urls')),
+    # Django App URLs:
+    url(r'^accounts/', include('accounts.urls')),
 
     
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
