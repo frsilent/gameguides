@@ -193,9 +193,9 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    # Database migration helpers:
-    'south',
-    'registration',
+    'south', # Database migration helpers
+    # 'registration', # User Registration TODO: FIND A WAY TO GET THIS WORKING OR DON'T USE IT.
+                      # It is believed to be deprecated
 )
 
 # Apps specific for this project go here.
