@@ -6,18 +6,18 @@ from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('cms.urls')),
 
     # url(r'^$', TemplateView.as_view(template_name='base.html')),
 
-    url(r'^$', 'game_guides.views.home', name='home'),
+    # url(r'^$', 'game_guides.views.home', name='home'),
 
-    # Django App URLs:
-    url(r'^accounts/', include('accounts.urls')),
+    # # Django App URLs:
+    # url(r'^accounts/', include('accounts.urls')),
 
     
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
 
 if settings.DEBUG:
