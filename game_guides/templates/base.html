@@ -1,79 +1,12 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
+{% load cms_tags sekizai_tags %}
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>{% block title %}game_guides{% endblock title %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Le styles -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    <link href="{% static 'css/bootstrap-responsive.min.css' %}" rel="stylesheet">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- This file store project specific CSS -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
-
-    <!-- Use this to quickly test CSS changes in a template,
-        then move to project.css -->
-    {% block extra_css %}{% endblock extra_css %}
+      {% render_block "css" %}
   </head>
-
   <body>
-    <!-- Menu 1: Header image    Account/upgrade/logout
-         Menu 2: home/videos/contributors/lessons-->
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Game Guides Title and Image</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#"><span>{{ request.user }}</span></a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      {% comment %}
-      <h1>{% block page_title %}Example Base Template{% endblock page_title %}</h1>
-
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
-      {% endcomment %}
-
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-
-    <!-- place project specific Javascript in this file -->
-    <script src="{% static 'js/project.js' %}"></script>
-
-    {% block extra_js %}{% endblock extra_js %}
+      {% cms_toolbar %}
+      {% placeholder base_content %}
+      {% block base_content %}{% endblock %}
+      {% render_block "js" %}
   </body>
 </html>

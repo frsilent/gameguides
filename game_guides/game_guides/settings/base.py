@@ -1,5 +1,5 @@
 """Common settings and globals."""
-
+# -*- coding: utf-8 -*-
 
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
@@ -23,7 +23,7 @@ path.append(DJANGO_ROOT)
 
 ########## DEBUG CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = False
+DEBUG = True
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
 TEMPLATE_DEBUG = DEBUG
@@ -48,7 +48,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gameguides',
         'USER': 'postgres',
-        'PASSWORD': 'password',
+        'PASSWORD': 'p',
         'HOST': 'localhost',
     }
 }
@@ -139,6 +139,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    'cms.context_processors.media',
+    'sekizai.context_processors.sekizai',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -151,6 +153,12 @@ TEMPLATE_LOADERS = (
 TEMPLATE_DIRS = (
     normpath(join(SITE_ROOT, 'templates')),
 )
+
+CMS_TEMPLATES = (
+    ('template_1.html', 'Template One'),
+    ('template_2.html', 'Template Two'),
+)
+
 ########## END TEMPLATE CONFIGURATION
 
 
@@ -164,6 +172,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
 )
 ########## END MIDDLEWARE CONFIGURATION
 
@@ -194,9 +206,24 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'south', # Database migration helpers
-    # 'registration', # User Registration TODO: FIND A WAY TO GET THIS WORKING OR DON'T USE IT.
-                      # It is believed to be deprecated
+    'cms',
+    'mptt',
+    'menus',
+    'sekizai'
 )
+
+# cms plugins:
+# 'cms.plugins.file'
+# 'cms.plugins.flash'
+# 'cms.plugins.googlemap'
+# 'cms.plugins.link'
+# 'cms.plugins.picture'
+# 'cms.plugins.snippet'
+# 'cms.plugins.teaser'
+# 'cms.plugins.text'
+# 'cms.plugins.video'
+# 'cms.plugins.twitter'
+
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
