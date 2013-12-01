@@ -4,12 +4,13 @@ from django.contrib import admin
 from django.conf import settings
 
 admin.autodiscover()
+print include('cms.urls')
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('cms.urls')),
 
-    # url(r'^$', TemplateView.as_view(template_name='base.html')),
+    # url(r'^$', TemplateView.as_view(template_name='index.html')),
 
     # url(r'^$', 'game_guides.views.home', name='home'),
 

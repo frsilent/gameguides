@@ -1,5 +1,4 @@
 # Local development dependencies go here
-# Latest versions as of 10-16-2013
 -r base.txt
 coverage==3.7
 django-discover-runner==1.0

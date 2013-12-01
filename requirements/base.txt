@@ -1,11 +1,20 @@
-# Latest versions as of 10-16-2013
+# Latest versions as of December 1, 2013
 Django==1.5.5
-bpython==0.12
-django-braces==1.2.2
-django-mptt==0.5.2
-django-cms==2.4.3
-django-model-utils==1.5.0
-logutils==0.3.3
-south==0.8.2
-psycopg2==2.5.1
+Jinja2==2.7.1
+MarkupSafe==0.18
+PIL==1.1.7
+Pygments==1.6
+South==0.8.4
+Sphinx==1.2b3
 coverage==3.7
+django-classy-tags==0.4
+django-cms==2.4.3
+django-debug-toolbar==0.9.4
+django-discover-runner==1.0
+django-mptt==0.5.2
+django-sekizai==0.7
+docutils==0.11
+html5lib==0.99
+psycopg2==2.5.1
+six==1.4.1
+wsgiref==0.1.2

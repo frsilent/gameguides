@@ -7,7 +7,7 @@ def home(request):
     user_profile = request.user
 
     return render_to_response(
-        'base.html',
+        'index.html',
         locals(),
         context_instance=RequestContext(request)
     )

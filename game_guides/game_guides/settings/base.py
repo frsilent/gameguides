@@ -20,29 +20,21 @@ SITE_NAME = basename(DJANGO_ROOT)
 path.append(DJANGO_ROOT)
 ########## END PATH CONFIGURATION
 
-
 ########## DEBUG CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
 
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
 TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
 
 
 ########## MANAGER CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    ('Your Name', 'your_email@example.com'),
+    ('Roland Heintze', 'rheintze@linux.com'),
 )
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
 ########## END MANAGER CONFIGURATION
 
-
 ########## DATABASE CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -56,10 +48,7 @@ DATABASES = {
 
 
 ########## GENERAL CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
-TIME_ZONE = 'America/Los_Angeles'
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
+TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
@@ -93,9 +82,9 @@ STATIC_ROOT = normpath(join(SITE_ROOT, 'static'))
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = (
-    normpath(join(SITE_ROOT, 'static')),
-)
+# STATICFILES_DIRS = (
+#     normpath(join(SITE_ROOT, 'static')),
+# )
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
@@ -208,26 +197,24 @@ THIRD_PARTY_APPS = (
     'cms',
     'mptt',
     'menus',
-    'sekizai'
+    'sekizai',
+    # cms plugins:
+    'cms.plugins.file',
+    'cms.plugins.flash',
+    'cms.plugins.googlemap',
+    'cms.plugins.link',
+    'cms.plugins.picture',
+    'cms.plugins.snippet',
+    'cms.plugins.teaser',
+    'cms.plugins.text',
+    'cms.plugins.video',
+    'cms.plugins.twitter',
 )
-
-# cms plugins:
-# 'cms.plugins.file'
-# 'cms.plugins.flash'
-# 'cms.plugins.googlemap'
-# 'cms.plugins.link'
-# 'cms.plugins.picture'
-# 'cms.plugins.snippet'
-# 'cms.plugins.teaser'
-# 'cms.plugins.text'
-# 'cms.plugins.video'
-# 'cms.plugins.twitter'
-
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'accounts',
-    'contributors',
+    # 'accounts',
+    # 'contributors',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
