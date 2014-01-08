@@ -6,26 +6,16 @@ from sys import path
 
 
 ########## PATH CONFIGURATION
-# Absolute filesystem path to the Django project directory:
-DJANGO_ROOT = dirname(dirname(abspath(__file__)))
-
-# Absolute filesystem path to the top-level project folder:
-SITE_ROOT = dirname(DJANGO_ROOT)
-
-# Site name:
+DJANGO_ROOT = dirname(dirname(abspath(__file__))) # Django Project Root directory
+SITE_ROOT = dirname(DJANGO_ROOT) # Filesystem Path to project folder
 SITE_NAME = basename(DJANGO_ROOT)
-
-# Add our project to our pythonpath, this way we don't need to type our project
-# name in our dotted import paths:
-path.append(DJANGO_ROOT)
+path.append(DJANGO_ROOT) # Add project to pythonpath
 ########## END PATH CONFIGURATION
 
 ########## DEBUG CONFIGURATION
 DEBUG = True
-
 TEMPLATE_DEBUG = DEBUG
 ########## END DEBUG CONFIGURATION
-
 
 ########## MANAGER CONFIGURATION
 ADMINS = (
@@ -127,8 +117,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
-    'cms.context_processors.media',
-    'sekizai.context_processors.sekizai',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -140,11 +128,6 @@ TEMPLATE_LOADERS = (
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_DIRS = (
     normpath(join(SITE_ROOT, 'templates')),
-)
-
-CMS_TEMPLATES = (
-    ('template_1.html', 'Template One'),
-    ('template_2.html', 'Template Two'),
 )
 
 ########## END TEMPLATE CONFIGURATION
@@ -160,10 +143,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'cms.middleware.page.CurrentPageMiddleware',
-    'cms.middleware.user.CurrentUserMiddleware',
-    'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware',
 )
 ########## END MIDDLEWARE CONFIGURATION
 
@@ -194,27 +173,12 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'south', # Database migration helpers
-    'cms',
-    'mptt',
-    'menus',
-    'sekizai',
-    # cms plugins:
-    'cms.plugins.file',
-    'cms.plugins.flash',
-    'cms.plugins.googlemap',
-    'cms.plugins.link',
-    'cms.plugins.picture',
-    'cms.plugins.snippet',
-    'cms.plugins.teaser',
-    'cms.plugins.text',
-    'cms.plugins.video',
-    'cms.plugins.twitter',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    # 'accounts',
-    # 'contributors',
+    'accounts',
+    'contributors',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -253,7 +217,6 @@ LOGGING = {
     }
 }
 ########## END LOGGING CONFIGURATION
-
 
 ########## WSGI CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application

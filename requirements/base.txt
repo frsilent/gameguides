@@ -1,20 +1,5 @@
-# Latest versions as of December 1, 2013
-Django==1.5.5
-Jinja2==2.7.1
-MarkupSafe==0.18
-PIL==1.1.7
-Pygments==1.6
+# Latest versions as of January 7, 2014
+Django==1.6.1
+psycopg2==2.5.2
+Pillow==2.3.0
 South==0.8.4
-Sphinx==1.2b3
-coverage==3.7
-django-classy-tags==0.4
-django-cms==2.4.3
-django-debug-toolbar==0.9.4
-django-discover-runner==1.0
-django-mptt==0.5.2
-django-sekizai==0.7
-docutils==0.11
-html5lib==0.99
-psycopg2==2.5.1
-six==1.4.1
-wsgiref==0.1.2
