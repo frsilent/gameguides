@@ -4,7 +4,6 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
-
 ########## PATH CONFIGURATION
 DJANGO_ROOT = dirname(dirname(abspath(__file__))) # Django Project Root directory
 SITE_ROOT = dirname(DJANGO_ROOT) # Filesystem Path to project folder
@@ -66,15 +65,15 @@ MEDIA_URL = '/media/'
 
 ########## STATIC FILE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = normpath(join(SITE_ROOT, 'static'))
+STATIC_ROOT = normpath(join(SITE_ROOT, 'assets'))
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-# STATICFILES_DIRS = (
-#     normpath(join(SITE_ROOT, 'static')),
-# )
+STATICFILES_DIRS = (
+    normpath(join(SITE_ROOT, 'static')),
+)
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
