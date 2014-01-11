@@ -10,7 +10,9 @@ urlpatterns = patterns('',
     url(r'^$', 'game_guides.views.index', name='index'),
 
     # # Django App URLs:
-    # url(r'^accounts/', include('accounts.urls')),
+    url(r'^accounts/', include('accounts.urls')),
+    url(r'^contributors/', include('contributors.urls')),
+    url(r'^guides/', include('guides.urls')),
 
     
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

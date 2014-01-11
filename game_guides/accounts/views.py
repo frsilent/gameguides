@@ -5,9 +5,8 @@ from django.template import RequestContext
 from accounts.models import UserProfile
 
 def accounts(request):
-    print 'accounts view'
     return render_to_response(
-        'account/index.htm',
+        'accounts/index.html',
         locals(),
         context_instance=RequestContext(request)
     )

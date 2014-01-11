@@ -46,24 +46,28 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#"><span>{{ request.user }}</span></a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#upgrade">Upgrade</a></li>
+              <li><a href="#logout">Logout</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
+    <div class="navbar">
+      <a class="btn">Home</a>
+      <a class="btn">Videos</a>
+      <a class="btn">Contributors</a>
+      <a class="btn">Lessons</a>
+    </div>
 
     <div class="container">
-      {% comment %}
       <h1>{% block page_title %}Example Base Template{% endblock page_title %}</h1>
 
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
-      {% endcomment %}
 
-    </div> <!-- /container -->
+    </div>
 
     <!-- Le javascript
     ================================================== -->

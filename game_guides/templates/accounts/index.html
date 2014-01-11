@@ -1,7 +1,29 @@
-{% extends 'base.htm' %}
-Accounts Index Page
+{% extends 'base.html' %}
+<div class="container">
+  <h1>{% block page_title %}Accounts Page{% endblock page_title %}</h1>
 
-
+  {% block content %}
+    <ul>
+        <li>Account info</li>
+        <li>Change Password</li>
+        <li>Change email</li>
+        <li>Referrals</li>
+        <li>Tips (if pro)</li>
+        <li>Trial Codes</li>
+        <li>Support</li>
+    </ul>
+    <div>
+        <h2>Block styled to right</h2>
+        <span>Account Information</span>
+        <ul>
+            <li>Username</li>
+            <li>Premium Member</li>
+            <li>Else Upgrade Account Now Option</li>
+            <li>Update payment information, last transaction, type, date</li>
+        </ul>
+    </div>
+  {% endblock content %}
+</div>
 
 {% comment %}
 
