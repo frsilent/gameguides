@@ -10,8 +10,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gameguides',
-        'USER': 'opensorcerer',
-        'PASSWORD': 'password',
+        'USER': 'root',
+        'PASSWORD': 'n@tc0de',
         'HOST': 'localhost',
     }
 }
