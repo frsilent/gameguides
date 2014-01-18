@@ -4,7 +4,7 @@
 #	Casey to submit User Stories to the dev team.								##	
 ##################################################################################
 
-* Review Django South Module
-* Review django-braces Module
-* Make the landing/home page match casey's mockup thingy
-* Establish frontend & URLs to the Contributors app
+* Review Django South Module                                    DONE
+* Review django-braces Module                                   
+* Make the landing/home page match casey's mockup thingy        DONE
+* Establish frontend & URLs to the Contributors app             DONE

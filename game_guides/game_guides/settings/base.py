@@ -178,6 +178,9 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'accounts',
     'contributors',
+    'games',
+    'guides',
+    'lessons'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
