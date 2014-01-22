@@ -4,6 +4,9 @@
 
   {% block content %}
     <h3>Top 5 videos</h3>
+    {% for video in top5 %}
+      {{ video.name }}
+    {% endfor %}
     <h3>Various Filters</h3>
     <ul>
         <li> d2, train, ferno, nuke, cache, etc</li>

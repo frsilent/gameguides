@@ -3,8 +3,11 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     """
-    Extends Django's User model with additional fields
+    Extends Django's User model with additional fields unique to the site
     """
+    class Meta:
+        app_label = "accounts"
+
     user = models.OneToOneField(User)
     is_premium = models.BooleanField(default=False)
     steam_id   = models.TextField(default='', null=True, blank=True)
