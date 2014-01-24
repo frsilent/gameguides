@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect, Http404, HttpRequest, HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from accounts.models import UserProfile
+from accounts.models import Account
 
 def index(request):
     user_profile = request.user

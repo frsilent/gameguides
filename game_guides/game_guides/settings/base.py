@@ -51,7 +51,8 @@ USE_L10N = True
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
-AUTH_PROFILE_MODULE = ""
+AUTH_PROFILE_MODULE = "accounts.Account"
+AUTH_USER_MODULE = "accounts.Account"
 ########## END GENERAL CONFIGURATION
 
 
@@ -158,7 +159,7 @@ DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    # 'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 

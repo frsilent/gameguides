@@ -9,8 +9,8 @@ class Category(models.Model):
     class Meta:
         app_label = "categories"
 
+    name = models.CharField(max_length=128, default='', null=True, blank=True)
     game = models.ForeignKey('games.Game')
-    name = models.TextField(default='', null=True, blank=True)
 
     def __unicode__(self):
         return '%s %s' % (self.game,self.name)

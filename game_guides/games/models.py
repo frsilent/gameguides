@@ -8,7 +8,7 @@ class Game(models.Model):
     class Meta:
         app_label = "games"
     
-    name = models.TextField(default='', null=True, blank=True)
+    name = models.CharField(max_length=128, default='', null=True, blank=True)
     official_site = models.URLField(default='', null=True, blank=True)
 
     def __unicode__(self):

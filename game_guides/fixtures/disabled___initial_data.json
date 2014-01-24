@@ -3,7 +3,7 @@
     //                                                                          Accounts
     //
     {
-        "model" : "accounts.UserProfile",
+        "model" : "accounts.Account",
         "pk" : 1,
         "fields" : {
             "user" : 1,  // Need to be FK to User.objects.get(id=1)
@@ -13,7 +13,7 @@
         }
     },
     {
-        "model" : "accounts.UserProfile",
+        "model" : "accounts.Account",
         "pk" : 2,
         "fields" : {
             "user" = 2,  // Need to be FK to User.objects.get(id=1)
@@ -50,7 +50,7 @@
         "model" : "contributors.Contributor",
         "pk" : 1,
         "fields" : {
-            "account" : 1, // Need to be FK to UserProfile object
+            "account" : 1, // Need to be FK to Account object
             "games_played" : 1, // Need to be FKs to all games contributed to
             "bio" : "I am the best"
         }
@@ -59,8 +59,8 @@
         "model" : "contributors.Contributor",
         "pk" : 2,
         "fields" : {
-            "account" : 2, // Need to be FK to UserProfile object
-            "games_played" : [1,2], // Need to be FKs to all games contributed to
+            "account" : 2, // Need to be FK to Account object
+            "games_played" : 1, // Need to be FKs to all games contributed to
             "bio" : "I am also the best"
         }
     },

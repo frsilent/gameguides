@@ -18,3 +18,5 @@ createdb gameguides -T template0 -E UTF8
 echo "./game_guides/manage.py syncdb 
 ./game_guides/manage.py migrate" # Need to fix some import issue so that these can be run inline
 echo "Use ./game_guides/manage.py runserver --settings=game_guides.settings.local"
+echo "./manage.py graph_models -a -g -o netcode_visual.png will make a pretty picture of the schema"
+
