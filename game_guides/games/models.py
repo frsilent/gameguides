@@ -12,4 +12,4 @@ class Game(models.Model):
     official_site = models.URLField(default='', null=True, blank=True)
 
     def __unicode__(self):
-        return self.name
+        return unicode(self.name)

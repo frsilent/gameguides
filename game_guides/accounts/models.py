@@ -15,7 +15,7 @@ class Account(models.Model):
     #TODO: FK to Forum account
 
     def __unicode__(self):
-        return u'Profile of user: %s' % self.user.username
+        return u'Profile of user: %s' % unicode(self.user.username)
 
     def create_user_profile(sender, instance, created, **kwargs):
         if created:

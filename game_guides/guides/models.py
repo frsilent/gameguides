@@ -15,4 +15,4 @@ class Guide(models.Model):
     # game = models.ForeignKey('Game')
 
     def __unicode__(self):
-        return self.name
+        return unicode(self.name)
