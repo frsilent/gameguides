@@ -1,6 +1,6 @@
 from django.db import models
-# from accounts.models import Account
 from games.models import Game
+from django.conf import settings
 
 class Contributor(models.Model):
     """

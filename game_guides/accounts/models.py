@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 
 class Account(models.Model):
@@ -8,7 +9,7 @@ class Account(models.Model):
     class Meta:
         app_label = "accounts"
 
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, unique=True)
     is_premium = models.BooleanField(default=False)
     steam_id   = models.CharField(max_length=16, default='', null=True, blank=True)
     summoner   = models.CharField(max_length=64, default='', null=True, blank=True)
@@ -21,7 +22,7 @@ class Account(models.Model):
         if created:
             Account.objects.create(user=instance)
 
-        post_save.connect(create_user_profile, sender=Account)
+    post_save.connect(create_user_profile, sender=User)
 
 
 # Outline: Inherit from the Django user model (django.contrib.auth.models.User)
