@@ -33,21 +33,6 @@ class Account(models.Model):
                 pass
         super(Account, self).save(*args, **kwargs)
 
-# def save(self, *args, **kwargs):
-#     if not self.pk:
-#         try:
-#             p = UserProfile.objects.get(user=self.user)
-#             self.pk = p.pk
-#         except UserProfile.DoesNotExist:
-#             pass
-
-#     super(UserProfile, self).save(*args, **kwargs)
-
-
-
-
-
-
 # Outline: Inherit from the Django user model (django.contrib.auth.models.User)
 # Game specific details? (Steamid, summoner name, etc)
 # Bio 
