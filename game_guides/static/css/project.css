@@ -4,4 +4,13 @@
 .navbar .nav {
     float: right;
 }
+.player-bar {
+    height: 50px;
+    width: 400px;
+    margin-bottom: 2px;
+    background-color: #CFE2F3;
+}
+.player-image {
+    float: right;
+}
 /* END OVERRIDES BOOTSTRAP */

@@ -3,6 +3,12 @@
   <h1>{% block page_title %}Contributors Page{% endblock page_title %}</h1>
 
   {% block content %}
+  {% for player in contributors %}
+  <div class="player-bar">
+    <span>{{ player.account.user }}<span>
+    <img class="player-image" src="{{ player.account.picture }}"></img>
+  </div>
+  {% endfor %}
   <h3>For top 4 contributors repeat:</h3>
     <ul>
         <li>Player Image</li>
