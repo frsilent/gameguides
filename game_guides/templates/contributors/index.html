@@ -5,8 +5,8 @@
   {% block content %}
   {% for player in contributors %}
   <div class="player-bar">
-    <span>{{ player.account.user }}<span>
-    <img class="player-image" src="{{ player.account.picture }}"></img>
+    <span>{{ player.account.user }}</span>
+    <img class="player-image" src="{{ MEDIA_URL }}{{ player.account.picture }}" height="50px" width="50px"></img>
   </div>
   {% endfor %}
   <h3>For top 4 contributors repeat:</h3>
