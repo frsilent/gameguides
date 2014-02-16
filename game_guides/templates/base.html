@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le styles -->
+    <!-- styles -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <style>
       body {
@@ -31,9 +31,6 @@
   </head>
 
   <body>
-    <!-- Menu 1: Header image    Account/upgrade/logout
-         Menu 2: home/videos/contributors/lessons-->
-
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -56,7 +53,7 @@
     <div class="navbar">
       <a class="btn" href="{% url 'index' %}">Home</a>
       <a class="btn" href="{% url 'guides-listing' %}">Videos</a>
-      <a class="btn" href="{% url 'contributors-listing' %}">Contributors</a>
+      <a class="btn" href="{% url 'contributor-list' %}">Contributors</a>
       <a class="btn" href="{% url 'lesson-booking' %}">Lessons</a>
     </div>
 
@@ -69,7 +66,7 @@
 
     </div>
 
-    <!-- Le javascript
+    <!-- javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>

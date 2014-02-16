@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+<div class="container">
+  <h1>{% block page_title %}Contributors Page{% endblock page_title %}</h1>
+  {% block content %}
+  {% for player in object_list %}
+  <div class="player-bar">
+    {% comment %}<span><a href="{% url 'player-detail' player=player.id %}" >{{ player.account.user }}</a></span>{% endcomment %}
+    <span><a href="{% url 'contributor-detail' player.id%}" >{{ player.account.user }}</a></span>
+    <img class="player-image" src="{{ MEDIA_URL }}{{ player.account.picture }}" height="50px" width="50px"></img>
+    <div class="player-guides">
+      {% for guide in player.get_guides.all %} {{ guide.name }} {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  <h3>Want to contribute? Apply Here Link</h3>
+  {% endblock content %}
+</div>
+
+{% comment %}
+TODO: Eventually replace the costly get_guides_all with some kind of pagination.
+      Endless Pagination example below:
+
+        {% load endless %}
+
+        {% paginate entries %}
+        {% for entry in entries %}
+            {# your code to show the entry #}
+        {% endfor %}
+        {% show_pages %}
+
+{% endcomment %}

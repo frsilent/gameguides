@@ -5,8 +5,9 @@ from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    
+
     url(r'^$', 'game_guides.views.index', name='index'),
 
     # # Django App URLs:
@@ -15,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^guides/', include('guides.urls')),
     url(r'^lessons/', include('lessons.urls')),
 
-    
+
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
 

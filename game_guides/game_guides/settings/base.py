@@ -78,8 +78,8 @@ STATICFILES_DIRS = (
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
 )
 ########## END STATIC FILE CONFIGURATION
 
@@ -162,6 +162,8 @@ DJANGO_APPS = (
     # 'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'grappelli',
+
 
     # Useful template tags:
     # 'django.contrib.humanize',
@@ -173,6 +175,8 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'south', # Database migration helpers
+    'endless_pagination', # Used for lazy pagination
+    'embed_video', # Vimeo embedding
 )
 
 # Apps specific for this project go here.
