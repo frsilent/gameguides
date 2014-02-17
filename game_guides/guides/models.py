@@ -10,7 +10,7 @@ class Guide(models.Model):
 
     name = models.CharField(max_length=128, default='', null=True, blank=True)
     description = models.CharField(max_length=2048)
-    video = EmbedVideoField()
+    video = EmbedVideoField(blank=True) # Need to make this not required
 
     contributor = models.ForeignKey('contributors.Contributor')
     category = models.ForeignKey('categories.Category')

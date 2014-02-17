@@ -8,7 +8,11 @@
     <span><a href="{% url 'contributor-detail' player.id%}" >{{ player.account.user }}</a></span>
     <img class="player-image" src="{{ MEDIA_URL }}{{ player.account.picture }}" height="50px" width="50px"></img>
     <div class="player-guides">
-      {% for guide in player.get_guides.all %} {{ guide.name }} {% endfor %}
+      {% for guide in player.get_guides.all %}
+        <div class="guide_thumbnail">
+          <span>{{ guide.name }}</span>
+        </div>
+      {% endfor %}
     </div>
   </div>
   {% endfor %}
