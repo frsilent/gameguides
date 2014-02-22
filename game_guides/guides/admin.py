@@ -1,4 +1,9 @@
 from django.contrib import admin
+from embed_video.admin import AdminVideoMixin
 from models import Guide
 
-admin.site.register(Guide)
+
+class GuideAdmin(AdminVideoMixin, admin.ModelAdmin):
+    pass
+
+admin.site.register(Guide, GuideAdmin)
