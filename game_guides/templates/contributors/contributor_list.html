@@ -14,7 +14,8 @@
         {% video guide.video as vid %}
         <div class="guide_thumbnails">
           <a href="{% url 'guide-detail' guide.id %}">
-            <img src="{{ vid.thumbnail }}" height="30px" width="30px"></img>
+            {# TODO: Add exception handling to vid.thumbnail. Right now is crashing the page if video is not found #}
+            <img src="{{ vid.thumbnail }}" alt="no_vid.png" height="30px" width="30px"></img>
           </a>
         </div>
         {% endvideo %}

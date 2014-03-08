@@ -1,16 +1,23 @@
 from django.db import models
+from mptt.models import MPTTModel, TreeForeignKey
 
-class Category(models.Model):
+class Category(MPTTModel):
     """
-    Object to relate a game to various filters.
-    IE for Counter-strike "Map" would be a category with possible values of "dust2, inferno, cache"
-    League could have a category labeled "Role" with possible values of "jungle, adc, support"
+    Generic object for categorizing Guides. The Root nodes are the individual Game identifiers
     """
     class Meta:
         app_label = "categories"
+    class MPTTMeta:
+        order_insertion_by = ['name']
 
-    name = models.CharField(max_length=128, default='', null=True, blank=True)
-    game = models.ForeignKey('games.Game')
+    name = models.CharField(max_length=50, unique=True)
+
+    game = models.ForeignKey('games.Game', null=True, blank=True, help_text='This is field is necessary for Root Nodes but no others.')
+    parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
 
     def __unicode__(self):
-        return '%s %s' % (self.game,self.name)
+        name = self.name
+        if self.level > 0:
+            for parent in self.get_ancestors()[::-1]:
+                name =  parent.name + ' >> ' + name
+        return name

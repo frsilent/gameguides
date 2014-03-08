@@ -16,7 +16,6 @@ urlpatterns = patterns('',
     url(r'^guides/', include('guides.urls')),
     url(r'^lessons/', include('lessons.urls')),
 
-
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
 

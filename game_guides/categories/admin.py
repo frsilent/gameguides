@@ -1,8 +1,5 @@
 from django.contrib import admin
+from mptt.admin import MPTTModelAdmin
 from models import Category
 
-# class CategoryAdmin(admin.ModelAdmin):
-#     pass
-# admin.site.register(Category, CategoryAdmin)
-
-admin.site.register(Category)
+admin.site.register(Category, MPTTModelAdmin)

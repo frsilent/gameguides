@@ -1,5 +1,7 @@
 from django.db import models
+
 from embed_video.fields import EmbedVideoField
+import django_filters
 
 class Guide(models.Model):
     """
@@ -17,3 +19,14 @@ class Guide(models.Model):
 
     def __unicode__(self):
         return unicode(self.name)
+
+# class GuideFilter(django_filters.FilterSet):
+#     """
+#     Class to handle filtering for guides
+#     """
+#     class Meta:
+#         model = Guide
+
+#     def __init__(self, *args, **kwargs):
+#         super(GuideFilter, self).__init__(*args, **kwargs)
+#         self.filters['category'].extra.update({'empty_label': 'All Categorys'})

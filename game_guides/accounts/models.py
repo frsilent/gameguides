@@ -34,13 +34,3 @@ class Account(models.Model):
             except Account.DoesNotExist:
                 pass
         super(Account, self).save(*args, **kwargs)
-
-# Outline: Inherit from the Django user model (django.contrib.auth.models.User)
-# Game specific details? (Steamid, summoner name, etc)
-# Bio 
-# Some form of IP tracking (Text field, IPs added as a list if new.)
-# Address, Address2, State/Province, City, Country, Zip
-# Website??
-# Postcount, for forums
-# Followers (Many to one.)
-# Referrer (FK to self)

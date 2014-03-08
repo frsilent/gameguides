@@ -177,6 +177,8 @@ THIRD_PARTY_APPS = (
     'south', # Database migration helpers
     'endless_pagination', # Used for lazy pagination
     'embed_video', # Vimeo embedding
+    'mptt', # Handles hierarchical data for the guides, categories, etc
+    'django_filters', # Used for filtering in ListViews
 )
 
 # Apps specific for this project go here.

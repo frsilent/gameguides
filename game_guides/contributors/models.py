@@ -13,7 +13,6 @@ class Contributor(models.Model):
         app_label = "contributors"
 
     account = models.ForeignKey('accounts.Account')
-    # games_played = models.ManyToManyField('games.Game')
     bio     = models.CharField(max_length=2048, default='', blank=True)
 
     def get_guides(self):
