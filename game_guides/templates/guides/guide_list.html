@@ -2,7 +2,11 @@
 <div class="container">
   <h1>{% block page_title %}Guides Page{% endblock page_title %}</h1>
   {% block content %}
-  {% for guide in object_list %}
+  <form action="" method="get">
+    {{ filter.form }}
+    <input type="submit" />
+  </form>
+  {% for guide in filter %}
   <div class="guide-bar">
     <span><a href="{% url 'guide-detail' guide.id%}" >{{ guide.name }}</a></span>
   </div>
@@ -23,4 +27,21 @@ TODO: Eventually replace the costly get_guides_all with some kind of pagination.
         {% endfor %}
         {% show_pages %}
 
+
+{% extends "base.html" %}
+
+
+######################## f_list ########################
+{% block content %}
+    <form action="" method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+    {% for obj in filter %}
+        {{ obj.name }}<br />
+    {% endfor %}
+{% endblock %}
+
+
 {% endcomment %}
+
