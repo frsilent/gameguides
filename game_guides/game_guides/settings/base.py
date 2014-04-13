@@ -159,9 +159,10 @@ DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.comments',
     'grappelli',
 
 
@@ -189,7 +190,7 @@ LOCAL_APPS = (
     'game_guides',
     'games',
     'guides',
-    'lessons'
+    'lessons',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

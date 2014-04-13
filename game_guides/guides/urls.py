@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url
-from guides.views import GuideListView, GuideDetailView, guide_list, TestListView
+from guides.views import GuideListView, GuideDetailView, guide_list
 
 urlpatterns = patterns('guide.views',
     url(r'^$', guide_list, name='guide-list'),

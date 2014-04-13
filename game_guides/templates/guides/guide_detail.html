@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
+{% load comments %}
 {% load embed_video_tags %}
-<div class="container">
-  <h1>{% block page_title %}Guide {{ object.name }} Page{% endblock page_title %}</h1>
-  {% block content %}
-      {% video object.video as vid %}
-        Thumbnail: <img src="{{ vid.thumbnail }}"></img>
-        Description: {{ object.description }}
-        {% video vid 'small' %}
-      {% endvideo %}
-  {% endblock content %}
-</div>
+{% block page_title %}Guide {{ object.name }} Page{% endblock page_title %}
+
+{% block content %}
+    {% video object.video as vid %}
+    Thumbnail: <img src="{{ vid.thumbnail }}">
+    Description: {{ object.description }}
+    {% video vid 'small' %}
+    {% endvideo %}
+    <ul class="video-details">
+        <li>Rating: </li>
+        <li>Social Media Sharing</li>
+        <li>{{ object.hit_count }}</li>
+        <li>{{ object.contributor }}</li>
+    </ul>
+
+    {% block comments %}
+        {% render_comment_list for object %}
+        {% render_comment_form for object %}
+    {% endblock %}
+
+{% endblock content %}

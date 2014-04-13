@@ -15,9 +15,10 @@ class Category(MPTTModel):
     game = models.ForeignKey('games.Game', null=True, blank=True, help_text='This is field is necessary for Root Nodes but no others.')
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
 
+
     def __unicode__(self):
         name = self.name
         if self.level > 0:
             for parent in self.get_ancestors()[::-1]:
-                name =  parent.name + ' >> ' + name
+                name = parent.name + ' >> ' + name
         return name
