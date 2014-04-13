@@ -49,9 +49,13 @@ dev_env/
 media/corp_image/
 media/thumbs/
 
-# Images for now
+# Images & Assets for now
+game_guides/assets/
 *.jpg
 *.png
 
 # Remove once code is ready...
 core/sql/*.sql
+
+# Project Settings
+.idea/

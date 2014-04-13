@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-<div class="container">
-  <h1>{% block page_title %}Accounts Page{% endblock page_title %}</h1>
 
-  {% block content %}
+{% block page_title %}Weclome {{ user }}!{% endblock page_title %}
+
+{% block content %}
+    {% comment %}
     <ul>
         <li>Account info</li>
         <li>Change Password</li>
@@ -22,8 +23,12 @@
             <li>Update payment information, last transaction, type, date</li>
         </ul>
     </div>
-  {% endblock content %}
-</div>
+    {% endcomment %}
+    <form>
+    {{ form }}
+    </form>
+
+{% endblock content %}
 
 {% comment %}
 

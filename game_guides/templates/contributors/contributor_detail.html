@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
-<div class="container">
-  <h1>{% block page_title %}Contributor {{ object.account.user }} Page{% endblock page_title %}</h1>
-  {% block content %}
-    {{ object.bio }}
-  {% endblock content %}
-</div>
+{% block page_title %}Contributor {{ object.account.user }} Page{% endblock page_title %}
+
+{% block content %}
+    <img class="player-image" src="{{ MEDIA_URL }}{{ object.account.picture }}" height="50px" width="50px" />
+    <div class="player-bio">
+        {{ object.bio }}
+    </div>
+{% endblock content %}
