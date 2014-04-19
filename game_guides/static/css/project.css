@@ -1,0 +1,27 @@
+/*! project specific CSS goes here. */
+
+/* OVERRIDES BOOTSTRAP */
+.navbar .nav {
+    float: right;
+}
+/* END OVERRIDES BOOTSTRAP */
+
+/* Contributor Page */
+.player-bar {
+    height: 100px;
+    width: 400px;
+    margin-bottom: 2px;
+    background-color: #CFE2F3;
+}
+.player-image {
+    float: left;
+}
+/* END Contributor Page */
+
+/* Guide Page */
+ul.video-details {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}

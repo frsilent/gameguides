@@ -1,12 +1,14 @@
 from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
 
+
 class Category(MPTTModel):
     """
     Generic object for categorizing Guides. The Root nodes are the individual Game identifiers
     """
     class Meta:
         app_label = "categories"
+
     class MPTTMeta:
         order_insertion_by = ['name']
 
@@ -14,7 +16,6 @@ class Category(MPTTModel):
 
     game = models.ForeignKey('games.Game', null=True, blank=True, help_text='This is field is necessary for Root Nodes but no others.')
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
-
 
     def __unicode__(self):
         name = self.name
