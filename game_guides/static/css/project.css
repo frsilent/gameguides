@@ -1,10 +1,40 @@
 /*! project specific CSS goes here. */
 
 /* OVERRIDES BOOTSTRAP */
-.navbar .nav {
-    float: right;
-}
+/*.navbar .nav {*/
+    /*float: right;*/
+/*}*/
+
 /* END OVERRIDES BOOTSTRAP */
+
+footer {
+    background-color: #5c5c5c;
+    padding: 40px 0 50px;
+    /*height: 100px;*/
+}
+
+/* Index Page */
+#demo-video {
+    background-image: url('http://www.netcodeguides.com/images/csgo.png');
+    margin-top: -10px;
+}
+#sponsorship {
+    background-color: black;
+}
+#feature-list {
+    margin-top: 30px;
+}
+#sample-video-container > ul {
+    list-style-type: none;
+    padding: 0;
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+#sample-video-container > ul > li > img {
+    width: 100%;
+}
+/* END Index Page */
 
 /* Contributor Page */
 .player-bar {

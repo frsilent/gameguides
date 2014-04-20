@@ -1,7 +1,219 @@
 {% extends "base.html" %}
+{% load embed_video_tags %}
 
-{% block page_title %}Index Template{% endblock page_title %}
+{% block base %}
+    <div id="demo-video">
+        <div class="container">
+            <h1>You'll be <em><strong>smarter, faster, & clutch</strong></em> with Netcode Premium</h1>
+            <div class="row">
+                <div class="col-lg-7">
+                    {% video 'https://player.vimeo.com/video/91485781' as vid %}
+                    {% video vid 'medium' %}
+                    {% endvideo %}
+                </div>
+                <div class="col-lg-5">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Teaching to Pwn.</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Netcode is the quickest way for you to increase your skill level by learning from
+                            <strong>The World's Best Players</strong>. We articulate decades of combined knowledge
+                            and experience in competitive gaming through our training and tutorial videos.</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Learn How The Professionals Train</li>
+                            <li class="list-group-item">Increase Your Accuracy</li>
+                            <li class="list-group-item">Have Professionls Review Your Gameplay</li>
+                            <li class="list-group-item">New Videos EVERYDAY</li>
+                            <li class="list-group-item">Learn Professional Strategies</li>
+                        </ul>
+                    </div>
+                    <a href="http://www.netcodeilluminati.com/register/"><button type="button" class="btn btn-primary btn-lg">Sign Up Now</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sponsorship">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h1>Our Partners:</h1>
+                </div>
+                <div class="col-lg-3">
+                    <img src="images/partner-razer.png" />
+                </div>
+                <div class="col-lg-3">
+                    <a href="http://eoreality.net"><img src="images/partner-eoreality.png" /></a>
+                </div>
+                <div class="col-lg-3">
+                    <img src="images/partner-machinima.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="customer-feedback">
+        <div class="container">
+            <div class="row">
+                <h2>What our Customers say</h2>
+                <div>
+                    <blockquote>Netcode premium is great! Caseyfoster and his moneycrew were the tools I needed to get
+                        my online gaming career on the right track,<strong> I don't know where I would be if I didn't
+                            have premium.</strong> Thanks Netcode premium!
+                        <small><cite>Customer</cite></small>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="feature-list">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h3>Check out some of our Premium Content</h3>
+                    {% video 'http://player.vimeo.com/video/50385043' as vid %}
+                    {% video vid 'tiny' %}
+                    {% endvideo %}
+                    <div id="sample-video-container">
+                        <ul class="video-list">
+                            <li class="sample-video">
+                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
+                                <img src="{{ vid.thumbnail }}" />
+                                {% endvideo %}
+                            </li>
+                            <li class="sample-video">
+                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
+                                <img src="{{ vid.thumbnail }}" />
+                                {% endvideo %}
+                            </li>
+                            <li class="sample-video">
+                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
+                                <img src="{{ vid.thumbnail }}" />
+                                {% endvideo %}
+                            </li>
+                            <li class="sample-video">
+                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
+                                <img src="{{ vid.thumbnail }}" />
+                                {% endvideo %}
+                            </li>
+                            <li class="sample-video">
+                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
+                                <img src="{{ vid.thumbnail }}" />
+                                {% endvideo %}
+                            </li>
+                            <li class="sample-video">
+                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
+                                <img src="{{ vid.thumbnail }}" />
+                                {% endvideo %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-log-7">
+                    <h3>It's a clear decision. Go premium today!</h3>
 
-{% block content %}
-<p>A bunch of news & widgets here?</p>
-{% endblock content %}
+                </div>
+            </div>
+        </div>
+    </div>
+{#                <div class="grid_6">#}
+{#                    <div class="">#}
+{#                    <h2>It's a clear decision. Go premium today</h2><!--#}
+{#                    <h3>Account comparison.  When you join us you'll join a community with tens of thousands of competetive players to discuss and play. </h3>!-->#}
+{#                        <table class="features-table">#}
+{#                            <thead>#}
+{#                                <tr>#}
+{#                                    <td></td>#}
+{#                                    <td>Standard (FREE)</td>#}
+{#                                    <td><strong>Premium</strong></td>#}
+{#                                </tr>#}
+{#                            </thead>#}
+{#                            <tfoot>#}
+{#                                <tr>#}
+{#                                    <td></td>#}
+{#                                    <td><a href="http://www.netcodeilluminati.com/forums/register.php" class="small black" style="font-size:18px;text-decoration:none;">Sign Up</a></td>#}
+{#                                    <td><a href="http://www.netcodeilluminati.com/register/" class="cta button small blue">Sign Up</a></td>#}
+{#                                </tr>#}
+{#                            </tfoot>#}
+{#                            <tbody>#}
+{#                                <tr>#}
+{#                                    <td>Competitive Community Forum</td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="check"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="check"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>CS:S &amp; CS:GO Players' Bible</td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="check"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="check"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>Pro Players' Configs</td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="check"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="check"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>Tips and Tricks</td>#}
+{#                                    <td><img src="images/cross.png" width="16" height="16" alt="cross"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="check"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>Ask the Pros</td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="cross"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="cross"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>Prizes &amp; Giveaways</td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="cross"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="cross"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>User Demo Review By Pro</td>#}
+{#                                    <td><img src="images/cross.png" width="16" height="16" alt="cross"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="cross"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>Match &amp; Strat commentaries</td>#}
+{#                                    <td><img src="images/cross.png" width="16" height="16" alt="cross"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="cross"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>Aim &amp; Crosshair Placement Guides</td>#}
+{#                                    <td><img src="images/cross.png" width="16" height="16" alt="cross"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="check"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td> Request a Pro training video</td>#}
+{#                                    <td><img src="images/cross.png" width="16" height="16" alt="cross"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="cross"></td>#}
+{#                                </tr>#}
+{#                                <tr>#}
+{#                                    <td>Grenade Guides(smoke/flash)</td>#}
+{#                                    <td><img src="images/cross.png" width="16" height="16" alt="cross"></td>#}
+{#                                    <td><img src="images/check.png" width="16" height="16" alt="cross"></td>#}
+{#                                </tr>#}
+{#                            </tbody>#}
+{#                        </table>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="clear"></div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <footer>#}
+{#        <div class="container_16">#}
+{#            <div class="grid_8">#}
+{#                <ul>#}
+{#                    <li><a href="http://www.netcodeilluminati.com/register/">Sign Up</a></li>#}
+{#                    <li><a id="log-in2" href="#">Log In</a></li>#}
+{#                    <li><a href="http://www.netcodeilluminati.com/forums/">Forum</a></li>#}
+{#                </ul>#}
+{#                <p>© Copyright 2014, NetcodeGuides.com. All trademarks are property of their respective owners in the US and other countries.</p>#}
+{#            </div>#}
+{#            <div class="grid_8">#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="clear"></div>#}
+{#    </footer>#}
+{##}
+{#  </div>#}
+{% endblock base %}

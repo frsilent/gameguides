@@ -3,19 +3,19 @@
 {% block content %}
 
     {% block filters %}
-    <div class="map-filter">
-        <ul>
-            {% for c in filter.get_category %}
-                <li><a href="/guides/?category={{ c.id }}">{{ c }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+        <div class="map-filter">
+            <ul>
+                {% for c in filter.get_category %}
+                    <li><a href="/guides/?category={{ c.id }}">{{ c }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     {% endblock %}
 
     {% for guide in filter %}
-    <div class="guide-bar">
-    <span><a href="{% url 'guide-detail' guide.id%}" >{{ guide.name }}</a></span>
-    </div>
+        <div class="guide-bar">
+            <span><a href="{% url 'guide-detail' guide.id %}">{{ guide.name }}</a></span>
+        </div>
     {% endfor %}
     <h3>Want to contribute? Apply Here Link</h3>
 {% endblock content %}

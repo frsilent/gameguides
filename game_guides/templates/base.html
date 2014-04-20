@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>{% block title %}game_guides{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,9 @@
     <!-- styles -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
     </style>
     <link href="{% static 'css/bootstrap-responsive.min.css' %}" rel="stylesheet">
 
@@ -28,61 +28,88 @@
     <!-- Use this to quickly test CSS changes in a template,
         then move to project.css -->
     {% block extra_css %}{% endblock extra_css %}
-  </head>
+</head>
 
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Game Guides Title and Image</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#"><span>{{ request.user }}</span></a></li>
-              <li><a href="#upgrade">Upgrade</a></li>
-              <li><a href="#logout">Logout</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="navbar">
-      <a class="btn" href="{% url 'index' %}">Home</a>
-      <a class="btn" href="{% url 'guide-list' %}">Videos</a>
-      <a class="btn" href="{% url 'contributor-list' %}">Contributors</a>
-      <a class="btn" href="{% url 'lesson-booking' %}">Lessons</a>
-    </div>
-
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-      <h1>{% block page_title %}Example Base Template{% endblock page_title %}</h1>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.netcodeilluminati.com">
+                Netcodeee!
+            </a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
 
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
-
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'guide-list' %}">Videos</a></li>
+                <li><a href="{% url 'contributor-list' %}">Contributors</a></li>
+                <li><a href="{% url 'lesson-booking' %}">Lessons</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#"><span>{{ request.user }}</span></a></li>
+                <li><a href="#upgrade">Upgrade</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </div>
     </div>
+</div>
 
-    <!-- javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-47261040-1', 'frsilent.com');
-      ga('send', 'pageview');
-    </script>
+{% block base %}
+<div class="container">
+    <h1>{% block page_title %}Example Base Template{% endblock page_title %}</h1>
 
-    <!-- place project specific Javascript in this file -->
-    <script src="{% static 'js/project.js' %}"></script>
+    {% block content %}
+        <p>Use this document as a way to quick start any new project.</p>
+    {% endblock content %}
+</div>
+{% endblock %}
 
-    {% block extra_js %}{% endblock extra_js %}
-  </body>
+{% block footer %}
+<footer>
+    <div class="container">
+        <div class="row">
+            <ul>
+                <li><a href="http://www.netcodeilluminati.com/register/">Sign Up</a></li>
+                <li><a id="log-in2" href="#">Log In</a></li>
+                <li><a href="http://www.netcodeilluminati.com/forums/">Forum</a></li>
+            </ul>
+            <p>© Copyright 2014, NetcodeGuides.com. All trademarks are property of their respective owners in the US and other countries.</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+
+<!-- javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-47261040-1', 'frsilent.com');
+    ga('send', 'pageview');
+</script>
+
+<!-- place project specific Javascript in this file -->
+<script src="{% static 'js/project.js' %}"></script>
+
+{% block extra_js %}{% endblock extra_js %}
+</body>
 </html>

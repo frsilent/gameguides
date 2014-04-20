@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 <div class="container">
-  <h1>{% block page_title %}Guides Page{% endblock page_title %}</h1>
+    <h1>{% block page_title %}Guides Page{% endblock page_title %}</h1>
 
-  {% block content %}
-    <h3>Top 5 videos</h3>
-    {% for video in top5 %}
-      {{ video.name }}
-    {% endfor %}
-    <h3>Various Filters</h3>
-    <ul>
-        <li> d2, train, ferno, nuke, cache, etc</li>
-        <li> aim, rifle, sniper, pistol</li>
-    </ul>
-    <h3>6-9 Videos from filters chosen above</h3>
-  {% endblock content %}
+    {% block content %}
+        <h3>Top 5 videos</h3>
+        {% for video in top5 %}
+            {{ video.name }}
+        {% endfor %}
+        <h3>Various Filters</h3>
+        <ul>
+            <li> d2, train, ferno, nuke, cache, etc</li>
+            <li> aim, rifle, sniper, pistol</li>
+        </ul>
+        <h3>6-9 Videos from filters chosen above</h3>
+    {% endblock content %}
 </div>
