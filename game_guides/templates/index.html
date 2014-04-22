@@ -41,13 +41,13 @@
                     <h1>Our Partners:</h1>
                 </div>
                 <div class="col-lg-3">
-                    <img src="images/partner-razer.png" />
+                    <img src="http://www.netcodeguides.com/images/partner-razer.png" />
                 </div>
                 <div class="col-lg-3">
-                    <a href="http://eoreality.net"><img src="images/partner-eoreality.png" /></a>
+                    <a href="http://eoreality.net"><img src="http://www.netcodeguides.com/images/partner-eoreality.png" /></a>
                 </div>
                 <div class="col-lg-3">
-                    <img src="images/partner-machinima.png" />
+                    <img src="http://www.netcodeguides.com/images/partner-machinima.png" />
                 </div>
             </div>
         </div>
@@ -71,46 +71,39 @@
             <div class="row">
                 <div class="col-lg-5">
                     <h3>Check out some of our Premium Content</h3>
-                    {% video 'http://player.vimeo.com/video/50385043' as vid %}
+                    {% video videos.1.video as vid %}
                     {% video vid 'tiny' %}
                     {% endvideo %}
                     <div id="sample-video-container">
                         <ul class="video-list">
+                            {% for video in videos %}
                             <li class="sample-video">
-                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
+                                {% video video.video as vid %}
                                 <img src="{{ vid.thumbnail }}" />
                                 {% endvideo %}
                             </li>
-                            <li class="sample-video">
-                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
-                                <img src="{{ vid.thumbnail }}" />
-                                {% endvideo %}
-                            </li>
-                            <li class="sample-video">
-                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
-                                <img src="{{ vid.thumbnail }}" />
-                                {% endvideo %}
-                            </li>
-                            <li class="sample-video">
-                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
-                                <img src="{{ vid.thumbnail }}" />
-                                {% endvideo %}
-                            </li>
-                            <li class="sample-video">
-                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
-                                <img src="{{ vid.thumbnail }}" />
-                                {% endvideo %}
-                            </li>
-                            <li class="sample-video">
-                                {% video 'http://www.youtube.com/embed/4jG2rZsT2h8' as vid%}
-                                <img src="{{ vid.thumbnail }}" />
-                                {% endvideo %}
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
-                <div class="col-log-7">
+                <div class="col-lg-7">
                     <h3>It's a clear decision. Go premium today!</h3>
+                    <table class="table" id="features-table">
+                        <thead>
+                            <th></th>
+                            <th>Standard (FREE)</th>
+                            <th><strong>Premium</strong></th>
+                        </thead>
+                        <tbody>
+                            {% for feature in features_list %}
+                            <tr>
+                                <td>{{ feature.0 }}</td>
+                                <td>{% if feature.1 %}Check{% else %}Cross{% endif %}</td>
+                                <td>{% if feature.2 %}Check{% else %}Cross{% endif %}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
