@@ -1,9 +1,14 @@
 /*! project specific CSS goes here. */
 
 /* OVERRIDES BOOTSTRAP */
-/* TODO: Figure out how to make navbar big enough for netcode logo image embedding
-.navbar { height: 50px; }
-
+.navbar
+{
+    height: 70px;
+}
+.navbar-brand
+{
+    max-width: 60%;
+}
 /* END OVERRIDES BOOTSTRAP */
 
 footer {
