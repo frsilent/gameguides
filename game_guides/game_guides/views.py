@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 
 from guides.models import Guide
 
+
 def index(request):
     """
     Landing page to show why people should use the site
@@ -14,14 +15,15 @@ def index(request):
     features_list = [
         ("Competitive Community Forum", True, True),
         ("CS:S & CS:GO Players' Bible", True, True),
+        ("Pro Players' Configs", True, True),
         ("Tips and Tricks", False, True),
-        ("Ask the Pros", False, False),
-        ("Prizes & Giveaways", False, False),
-        ("User Demo Review By Pro", False, False),
-        ("Match & Strat commentaries", False, False),
+        ("Ask the Pros", True, True),
+        ("Prizes & Giveaways", True, True),
+        ("User Demo Review By Pro", False, True),
+        ("Match & Strat commentaries", False, True),
         ("Aim & Crosshair Placement Guides", False, True),
-        ("Request a Pro training video", False, False),
-        ("Grenade Guides(smoke/flash)", False, False),
+        ("Request a Pro training video", False, True),
+        ("Grenade Guides(smoke/flash)", False, True),
 
     ]
 

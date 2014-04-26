@@ -17,7 +17,7 @@ class Guide(models.Model):
     name = models.CharField(max_length=128, default='', blank=True)
     description = models.CharField(max_length=2048)
     hit_count = models.IntegerField(default=0)
-    video = EmbedVideoField(blank=True) # Need to make this not required
+    video = EmbedVideoField(blank=True)  # Need to make this not required
 
     contributor = models.ForeignKey('contributors.Contributor')
     category = models.ForeignKey('categories.Category')
@@ -38,8 +38,8 @@ class GuideFilter(django_filters.FilterSet):
         fields = ['category']
 
 
-    cs = Category.objects.get(name="Counter-Strike")
-    category = django_filters.ModelChoiceFilter(queryset=cs.get_descendants().filter(level=2))
+    # cs = Category.objects.get(name="Counter-Strike")
+    # category = django_filters.ModelChoiceFilter(queryset=cs.get_descendants().filter(level=2))
 
     def get_category(self):
         cs = Category.objects.get(name="Counter-Strike")

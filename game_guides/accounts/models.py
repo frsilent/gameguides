@@ -11,9 +11,9 @@ class Account(models.Model):
 
     user = models.OneToOneField(User, unique=True)
     is_premium = models.BooleanField(default=False)
-    steam_id   = models.CharField(max_length=16, default='', null=True, blank=True)
-    summoner   = models.CharField(max_length=64, default='', null=True, blank=True)
-    picture    = models.ImageField(upload_to='account_images/', default='account_images/None/no-image.jpg', blank=True, null=True)
+    steam_id = models.CharField(max_length=16, default='', null=True, blank=True)
+    summoner = models.CharField(max_length=64, default='', null=True, blank=True)
+    picture = models.ImageField(upload_to='account_images/', default='account_images/None/no-image.jpg', blank=True, null=True)
 
     #TODO: FK to Forum account
 

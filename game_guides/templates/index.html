@@ -71,21 +71,24 @@
             <div class="row">
                 <div class="col-lg-5">
                     <h3>Check out some of our Premium Content</h3>
-                    {% video videos.0.video as vid %}
-                    {% video vid 'tiny' %}
-                    {% endvideo %}
+                    <div id="feature-player">
+                        {% video videos.1.video as vid %}
+                        {% video vid 'tiny' %}
+                        {% endvideo %}
+                    </div>
                     <div id="sample-video-container">
-                        <ul class="video-list">
-                            {% for video in videos %}
-                            <li class="sample-video">
-                                {% video video.video as vid %}
-                                <img src="{{ vid.thumbnail }}" />
-                                {% endvideo %}
-                            </li>
-                            {% endfor %}
-                        </ul>
+                        {% for guide in videos %}
+                        {% video guide.video as vid %}
+                        <div class="col-xs-6 col-md-4">
+                            <a class="thumbnail sample-video" data-url="{{ vid.url }}">
+                              <img data-src="holder.js/100%x180" alt="100%x180" src="{{ vid.thumbnail }}">
+                            </a>
+                        </div>
+                        {% endvideo %}
+                        {% endfor %}
                     </div>
                 </div>
+
                 <div class="col-lg-7">
                     <h3>It's a clear decision. Go premium today!</h3>
                     <table class="table" id="features-table">
@@ -98,8 +101,12 @@
                             {% for feature in features_list %}
                             <tr>
                                 <td>{{ feature.0 }}</td>
-                                <td>{% if feature.1 %}Check{% else %}Cross{% endif %}</td>
-                                <td>{% if feature.2 %}Check{% else %}Cross{% endif %}</td>
+                                <td><img
+                                    src="http://www.netcodeguides.com/images/{% if feature.1 %}check{% else %}cross{% endif %}.png" />
+                                </td>
+                                <td><img
+                                    src="http://www.netcodeguides.com/images/{% if feature.2 %}check{% else %}cross{% endif %}.png" />
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>
