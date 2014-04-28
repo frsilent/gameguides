@@ -180,7 +180,7 @@ THIRD_PARTY_APPS = (
     'embed_video',  # Vimeo embedding
     'mptt',  # Handles hierarchical data for the guides, categories, etc
     'django_filters',  # Used for filtering in ListViews
-    # 'pipeline',  # Used for compressing & minifying css/js
+    'crispy_forms',  # Used for clean and uniform form styling
 )
 
 # Apps specific for this project go here.
