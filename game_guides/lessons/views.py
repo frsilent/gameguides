@@ -5,6 +5,7 @@ from .forms import LessonsForm
 
 
 def lessons(request):
+
     if request.method == 'POST':
         form = LessonsForm(data=request.POST)
         if form.is_valid():

@@ -13,8 +13,11 @@ class Category(MPTTModel):
         order_insertion_by = ['name']
 
     name = models.CharField(max_length=50, unique=True)
+    thumb = models.ImageField(upload_to='category_images/',
+                              default='category_images/None/no-image.jpg', blank=True, null=True)
+    game = models.ForeignKey('games.Game', null=True, blank=True,
+                             help_text='This is field is necessary for Root Nodes but no others.')
 
-    game = models.ForeignKey('games.Game', null=True, blank=True, help_text='This is field is necessary for Root Nodes but no others.')
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
 
     def __unicode__(self):

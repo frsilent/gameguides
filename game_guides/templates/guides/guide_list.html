@@ -1,22 +1,46 @@
 {% extends 'base.html' %}
+{% load embed_video_tags %}
+
 {% block page_title %}Guides Page{% endblock page_title %}
 {% block content %}
-
-    {% block filters %}
-        <div class="map-filter">
-            <ul>
-                {% for c in filter.get_category %}
-                    <li><a href="/guides/?category={{ c.id }}">{{ c }}</a></li>
+    <div class="row" id="top5-pane">
+        <div class="first-video" id="video-player">
+            {% video top5.1.video as vid %}
+            {% video vid 'tiny' %}
+            {% endvideo %}
+        </div>
+        <div class="sample-video-container">
+            {% for guide in top5|slice:"1:" %}
+                {% video guide.video as vid %}
+                <div class="col-xs-6 col-md-4">
+                    <a class="thumbnail sample-video" data-url="{{ vid.url }}">
+                        <img data-src="holder.js/100%x180" alt="100%x180" src="{{ vid.thumbnail }}">
+                    </a>
+                </div>
+                {% endvideo %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row" id="filter-pane">
+        {% block filters %}
+            <div class="filter-list">
+                {% for category in filter.get_category %}
+                    <a href="/guides/?category={{ category.id }}">
+                    <img src="{{ MEDIA_URL }}{{ category.thumb }}">
+                    </a>
                 {% endfor %}
-            </ul>
-        </div>
-    {% endblock %}
+            </div>
+        {% endblock %}
 
-    {% for guide in filter %}
-        <div class="guide-bar">
-            <span><a href="{% url 'guide-detail' guide.id %}">{{ guide.name }}</a></span>
-        </div>
-    {% endfor %}
+        {% for guide in filter %}
+            <div class="guide-bar">
+                <span><a href="{% url 'guide-detail' guide.id %}">{{ guide.name }}</a></span>
+            </div>
+        {% endfor %}
+
+    </div>
+
+
     <h3>Want to contribute? Apply Here Link</h3>
 {% endblock content %}
 
@@ -34,19 +58,4 @@ TODO: Eventually replace the costly get_guides_all with some kind of pagination.
 
 
 {% extends "base.html" %}
-
-
-######################## f_list ########################
-{% block content %}
-    <form action="" method="get">
-        {{ filter.form.as_p }}
-        <input type="submit" />
-    </form>
-    {% for obj in filter %}
-        {{ obj.name }}<br />
-    {% endfor %}
-{% endblock %}
-
-
 {% endcomment %}
-

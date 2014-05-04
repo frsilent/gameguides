@@ -1,1 +1,645 @@
-[{"pk": 1, "model": "contenttypes.contenttype", "fields": {"model": "permission", "name": "permission", "app_label": "auth"}}, {"pk": 2, "model": "contenttypes.contenttype", "fields": {"model": "group", "name": "group", "app_label": "auth"}}, {"pk": 3, "model": "contenttypes.contenttype", "fields": {"model": "user", "name": "user", "app_label": "auth"}}, {"pk": 4, "model": "contenttypes.contenttype", "fields": {"model": "contenttype", "name": "content type", "app_label": "contenttypes"}}, {"pk": 5, "model": "contenttypes.contenttype", "fields": {"model": "session", "name": "session", "app_label": "sessions"}}, {"pk": 6, "model": "contenttypes.contenttype", "fields": {"model": "site", "name": "site", "app_label": "sites"}}, {"pk": 7, "model": "contenttypes.contenttype", "fields": {"model": "comment", "name": "comment", "app_label": "comments"}}, {"pk": 8, "model": "contenttypes.contenttype", "fields": {"model": "commentflag", "name": "comment flag", "app_label": "comments"}}, {"pk": 9, "model": "contenttypes.contenttype", "fields": {"model": "logentry", "name": "log entry", "app_label": "admin"}}, {"pk": 10, "model": "contenttypes.contenttype", "fields": {"model": "migrationhistory", "name": "migration history", "app_label": "south"}}, {"pk": 11, "model": "contenttypes.contenttype", "fields": {"model": "account", "name": "account", "app_label": "accounts"}}, {"pk": 12, "model": "contenttypes.contenttype", "fields": {"model": "category", "name": "category", "app_label": "categories"}}, {"pk": 13, "model": "contenttypes.contenttype", "fields": {"model": "game", "name": "game", "app_label": "games"}}, {"pk": 14, "model": "contenttypes.contenttype", "fields": {"model": "guide", "name": "guide", "app_label": "guides"}}, {"pk": 15, "model": "contenttypes.contenttype", "fields": {"model": "contributor", "name": "contributor", "app_label": "contributors"}}, {"pk": "yxnidk0kmahudrxqo9f5apv94n645i04", "model": "sessions.session", "fields": {"expire_date": "2014-05-10T02:50:11.101Z", "session_data": "ZTU5NjY3ZGI0MWU4MzBkM2RlNjg0NDJkNDBkNTNmMDk5MjAxNDY2YTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6MX0="}}, {"pk": 1, "model": "sites.site", "fields": {"domain": "example.com", "name": "example.com"}}, {"pk": 1, "model": "categories.category", "fields": {"rght": 20, "name": "Counter-Strike", "parent": null, "level": 0, "lft": 1, "game": 2, "tree_id": 1}}, {"pk": 2, "model": "categories.category", "fields": {"rght": 10, "name": "League of Legends", "parent": null, "level": 0, "lft": 1, "game": 1, "tree_id": 2}}, {"pk": 3, "model": "categories.category", "fields": {"rght": 9, "name": "Gun", "parent": 1, "level": 1, "lft": 2, "game": null, "tree_id": 1}}, {"pk": 4, "model": "categories.category", "fields": {"rght": 19, "name": "Map", "parent": 1, "level": 1, "lft": 10, "game": null, "tree_id": 1}}, {"pk": 5, "model": "categories.category", "fields": {"rght": 4, "name": "Rifles", "parent": 3, "level": 2, "lft": 3, "game": null, "tree_id": 1}}, {"pk": 6, "model": "categories.category", "fields": {"rght": 6, "name": "SMGs", "parent": 3, "level": 2, "lft": 5, "game": null, "tree_id": 1}}, {"pk": 7, "model": "categories.category", "fields": {"rght": 8, "name": "Sniper Rifles", "parent": 3, "level": 2, "lft": 7, "game": null, "tree_id": 1}}, {"pk": 8, "model": "categories.category", "fields": {"rght": 12, "name": "Dust 2", "parent": 4, "level": 2, "lft": 11, "game": null, "tree_id": 1}}, {"pk": 9, "model": "categories.category", "fields": {"rght": 14, "name": "Inferno", "parent": 4, "level": 2, "lft": 13, "game": null, "tree_id": 1}}, {"pk": 10, "model": "categories.category", "fields": {"rght": 16, "name": "Mirage", "parent": 4, "level": 2, "lft": 15, "game": null, "tree_id": 1}}, {"pk": 11, "model": "categories.category", "fields": {"rght": 18, "name": "Nuke", "parent": 4, "level": 2, "lft": 17, "game": null, "tree_id": 1}}, {"pk": 12, "model": "categories.category", "fields": {"rght": 9, "name": "Role", "parent": 2, "level": 1, "lft": 2, "game": null, "tree_id": 2}}, {"pk": 13, "model": "categories.category", "fields": {"rght": 4, "name": "ADC", "parent": 12, "level": 2, "lft": 3, "game": null, "tree_id": 2}}, {"pk": 14, "model": "categories.category", "fields": {"rght": 8, "name": "Support", "parent": 12, "level": 2, "lft": 7, "game": null, "tree_id": 2}}, {"pk": 15, "model": "categories.category", "fields": {"rght": 6, "name": "Jungle", "parent": 12, "level": 2, "lft": 5, "game": null, "tree_id": 2}}, {"pk": 1, "model": "games.game", "fields": {"name": "League of Legends", "official_site": "http://www.riotgames.com/"}}, {"pk": 2, "model": "games.game", "fields": {"name": "Counter Strike", "official_site": "http://www.csgo.com/"}}, {"pk": 1, "model": "guides.guide", "fields": {"category": 5, "name": "recoil", "video": "https://vimeo.com/85152562", "hit_count": 0, "contributor": 1, "description": "spray an ak"}}, {"pk": 2, "model": "guides.guide", "fields": {"category": 8, "name": "AWP Mid", "video": "https://vimeo.com/87312534", "hit_count": 0, "contributor": 3, "description": "How to pick mid, make shots & not get picked"}}, {"pk": 3, "model": "guides.guide", "fields": {"category": 14, "name": "Don't let ADC die", "video": "https://vimeo.com/87312534", "hit_count": 0, "contributor": 4, "description": "How to play decent support & not suck"}}, {"pk": 4, "model": "guides.guide", "fields": {"category": 15, "name": "Ganking", "video": "https://vimeo.com/87312534", "hit_count": 0, "contributor": 5, "description": "Ganking as a jungler"}}, {"pk": 5, "model": "guides.guide", "fields": {"category": 8, "name": "smoke mid", "video": "https://vimeo.com/87312534", "hit_count": 0, "contributor": 2, "description": "smoke mid as ct"}}, {"pk": 6, "model": "guides.guide", "fields": {"category": 8, "name": "smoke b tunnel", "video": "https://vimeo.com/87312534", "hit_count": 0, "contributor": 2, "description": "smoke b tunnel off so you can get on platform"}}, {"pk": 7, "model": "guides.guide", "fields": {"category": 9, "name": "smoke t ramp", "video": "https://vimeo.com/87312534", "hit_count": 0, "contributor": 2, "description": "Smoke off t ramp from ct spawn"}}, {"pk": 1, "model": "contributors.contributor", "fields": {"bio": "from iBuyPower", "account": 3}}, {"pk": 2, "model": "contributors.contributor", "fields": {"bio": "Illuminati Extraordianaire", "account": 2}}, {"pk": 3, "model": "contributors.contributor", "fields": {"bio": "Snipes", "account": 4}}, {"pk": 4, "model": "contributors.contributor", "fields": {"bio": "Mad disrespect in League", "account": 5}}, {"pk": 5, "model": "contributors.contributor", "fields": {"bio": "League player", "account": 6}}, {"pk": 1, "model": "auth.permission", "fields": {"codename": "add_permission", "name": "Can add permission", "content_type": 1}}, {"pk": 2, "model": "auth.permission", "fields": {"codename": "change_permission", "name": "Can change permission", "content_type": 1}}, {"pk": 3, "model": "auth.permission", "fields": {"codename": "delete_permission", "name": "Can delete permission", "content_type": 1}}, {"pk": 4, "model": "auth.permission", "fields": {"codename": "add_group", "name": "Can add group", "content_type": 2}}, {"pk": 5, "model": "auth.permission", "fields": {"codename": "change_group", "name": "Can change group", "content_type": 2}}, {"pk": 6, "model": "auth.permission", "fields": {"codename": "delete_group", "name": "Can delete group", "content_type": 2}}, {"pk": 7, "model": "auth.permission", "fields": {"codename": "add_user", "name": "Can add user", "content_type": 3}}, {"pk": 8, "model": "auth.permission", "fields": {"codename": "change_user", "name": "Can change user", "content_type": 3}}, {"pk": 9, "model": "auth.permission", "fields": {"codename": "delete_user", "name": "Can delete user", "content_type": 3}}, {"pk": 10, "model": "auth.permission", "fields": {"codename": "add_contenttype", "name": "Can add content type", "content_type": 4}}, {"pk": 11, "model": "auth.permission", "fields": {"codename": "change_contenttype", "name": "Can change content type", "content_type": 4}}, {"pk": 12, "model": "auth.permission", "fields": {"codename": "delete_contenttype", "name": "Can delete content type", "content_type": 4}}, {"pk": 13, "model": "auth.permission", "fields": {"codename": "add_session", "name": "Can add session", "content_type": 5}}, {"pk": 14, "model": "auth.permission", "fields": {"codename": "change_session", "name": "Can change session", "content_type": 5}}, {"pk": 15, "model": "auth.permission", "fields": {"codename": "delete_session", "name": "Can delete session", "content_type": 5}}, {"pk": 16, "model": "auth.permission", "fields": {"codename": "add_site", "name": "Can add site", "content_type": 6}}, {"pk": 17, "model": "auth.permission", "fields": {"codename": "change_site", "name": "Can change site", "content_type": 6}}, {"pk": 18, "model": "auth.permission", "fields": {"codename": "delete_site", "name": "Can delete site", "content_type": 6}}, {"pk": 19, "model": "auth.permission", "fields": {"codename": "add_comment", "name": "Can add comment", "content_type": 7}}, {"pk": 20, "model": "auth.permission", "fields": {"codename": "change_comment", "name": "Can change comment", "content_type": 7}}, {"pk": 21, "model": "auth.permission", "fields": {"codename": "delete_comment", "name": "Can delete comment", "content_type": 7}}, {"pk": 22, "model": "auth.permission", "fields": {"codename": "can_moderate", "name": "Can moderate comments", "content_type": 7}}, {"pk": 23, "model": "auth.permission", "fields": {"codename": "add_commentflag", "name": "Can add comment flag", "content_type": 8}}, {"pk": 24, "model": "auth.permission", "fields": {"codename": "change_commentflag", "name": "Can change comment flag", "content_type": 8}}, {"pk": 25, "model": "auth.permission", "fields": {"codename": "delete_commentflag", "name": "Can delete comment flag", "content_type": 8}}, {"pk": 26, "model": "auth.permission", "fields": {"codename": "add_logentry", "name": "Can add log entry", "content_type": 9}}, {"pk": 27, "model": "auth.permission", "fields": {"codename": "change_logentry", "name": "Can change log entry", "content_type": 9}}, {"pk": 28, "model": "auth.permission", "fields": {"codename": "delete_logentry", "name": "Can delete log entry", "content_type": 9}}, {"pk": 29, "model": "auth.permission", "fields": {"codename": "add_migrationhistory", "name": "Can add migration history", "content_type": 10}}, {"pk": 30, "model": "auth.permission", "fields": {"codename": "change_migrationhistory", "name": "Can change migration history", "content_type": 10}}, {"pk": 31, "model": "auth.permission", "fields": {"codename": "delete_migrationhistory", "name": "Can delete migration history", "content_type": 10}}, {"pk": 32, "model": "auth.permission", "fields": {"codename": "add_account", "name": "Can add account", "content_type": 11}}, {"pk": 33, "model": "auth.permission", "fields": {"codename": "change_account", "name": "Can change account", "content_type": 11}}, {"pk": 34, "model": "auth.permission", "fields": {"codename": "delete_account", "name": "Can delete account", "content_type": 11}}, {"pk": 35, "model": "auth.permission", "fields": {"codename": "add_category", "name": "Can add category", "content_type": 12}}, {"pk": 36, "model": "auth.permission", "fields": {"codename": "change_category", "name": "Can change category", "content_type": 12}}, {"pk": 37, "model": "auth.permission", "fields": {"codename": "delete_category", "name": "Can delete category", "content_type": 12}}, {"pk": 38, "model": "auth.permission", "fields": {"codename": "add_game", "name": "Can add game", "content_type": 13}}, {"pk": 39, "model": "auth.permission", "fields": {"codename": "change_game", "name": "Can change game", "content_type": 13}}, {"pk": 40, "model": "auth.permission", "fields": {"codename": "delete_game", "name": "Can delete game", "content_type": 13}}, {"pk": 41, "model": "auth.permission", "fields": {"codename": "add_guide", "name": "Can add guide", "content_type": 14}}, {"pk": 42, "model": "auth.permission", "fields": {"codename": "change_guide", "name": "Can change guide", "content_type": 14}}, {"pk": 43, "model": "auth.permission", "fields": {"codename": "delete_guide", "name": "Can delete guide", "content_type": 14}}, {"pk": 44, "model": "auth.permission", "fields": {"codename": "add_contributor", "name": "Can add contributor", "content_type": 15}}, {"pk": 45, "model": "auth.permission", "fields": {"codename": "change_contributor", "name": "Can change contributor", "content_type": 15}}, {"pk": 46, "model": "auth.permission", "fields": {"codename": "delete_contributor", "name": "Can delete contributor", "content_type": 15}}, {"pk": 1, "model": "auth.user", "fields": {"username": "opensorcerer", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2014-04-26T02:50:11.046Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$LQlZQYzdFgel$l1HMTgFJAgeFGYQ/gb1B2DXrm9cR0MuGW44/T/fsSVM=", "email": "", "date_joined": "2014-04-26T02:49:48.044Z"}}, {"pk": 2, "model": "auth.user", "fields": {"username": "casey", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2014-04-26T02:55:18.595Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$nV0dJaoAZE9v$4DnNqpKx7n2yL5wmWEdUKOfJbI8CR+PFcdoJH6Q+lqA=", "email": "", "date_joined": "2014-04-26T02:55:18.595Z"}}, {"pk": 3, "model": "auth.user", "fields": {"username": "dazed", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2014-04-26T02:56:38.676Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$rE7nbn5cEPgW$WXQ6VJ/0Midkc/9jX5Ek5ozxT/VvHLeqNVyHOCaS85w=", "email": "", "date_joined": "2014-04-26T02:56:38.676Z"}}, {"pk": 4, "model": "auth.user", "fields": {"username": "shazham", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2014-04-26T02:57:15.023Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$0LesCz8lwH1W$Ifp+U0o0erJEESt+WK3Rp0zg4Mzj+ZE7G+Oav1DZLbw=", "email": "", "date_joined": "2014-04-26T02:57:15.023Z"}}, {"pk": 5, "model": "auth.user", "fields": {"username": "trick2g", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2014-04-26T02:57:34.939Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$N80Yer83ikzH$ZGBJvdXN7vhA3JYKtgTLfzWvyUnPhumjmFDIpPkebGU=", "email": "", "date_joined": "2014-04-26T02:57:34.939Z"}}, {"pk": 6, "model": "auth.user", "fields": {"username": "voyboy", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2014-04-26T02:57:58.651Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$TxGD35rulY0S$6P5xnDo6uJIkByoDJgZIwb9/uh/tnIWR3IqwxC3C5kc=", "email": "", "date_joined": "2014-04-26T02:57:58.651Z"}}, {"pk": 7, "model": "auth.user", "fields": {"username": "demoing", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2014-04-26T02:58:44.415Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$FsoFQ9cYZscR$mFQW7EI9qZT3TY/NGL5uFbhwbORpZPVvhXlaCNMDF5M=", "email": "", "date_joined": "2014-04-26T02:58:44.415Z"}}, {"pk": 1, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T02:51:55.801Z", "object_repr": "League of Legends", "object_id": "1", "change_message": "", "user": 1, "content_type": 13}}, {"pk": 2, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T02:52:12.170Z", "object_repr": "Counter Strike", "object_id": "2", "change_message": "", "user": 1, "content_type": 13}}, {"pk": 3, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T02:55:18.738Z", "object_repr": "casey", "object_id": "2", "change_message": "", "user": 1, "content_type": 3}}, {"pk": 4, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T02:56:38.787Z", "object_repr": "dazed", "object_id": "3", "change_message": "", "user": 1, "content_type": 3}}, {"pk": 5, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T02:57:15.132Z", "object_repr": "shazham", "object_id": "4", "change_message": "", "user": 1, "content_type": 3}}, {"pk": 6, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T02:57:35.048Z", "object_repr": "trick2g", "object_id": "5", "change_message": "", "user": 1, "content_type": 3}}, {"pk": 7, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T02:57:58.762Z", "object_repr": "voyboy", "object_id": "6", "change_message": "", "user": 1, "content_type": 3}}, {"pk": 8, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T02:58:44.525Z", "object_repr": "demoing", "object_id": "7", "change_message": "", "user": 1, "content_type": 3}}, {"pk": 9, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:21:59.567Z", "object_repr": "Profile of user: dazed", "object_id": "1", "change_message": "", "user": 1, "content_type": 15}}, {"pk": 10, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:22:19.515Z", "object_repr": "Profile of user: casey", "object_id": "2", "change_message": "", "user": 1, "content_type": 15}}, {"pk": 11, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:22:30.860Z", "object_repr": "Profile of user: shazham", "object_id": "3", "change_message": "", "user": 1, "content_type": 15}}, {"pk": 12, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:22:39.921Z", "object_repr": "Profile of user: trick2g", "object_id": "4", "change_message": "", "user": 1, "content_type": 15}}, {"pk": 13, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:22:54.270Z", "object_repr": "Profile of user: voyboy", "object_id": "5", "change_message": "", "user": 1, "content_type": 15}}, {"pk": 14, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:23:24.028Z", "object_repr": "Counter-Strike", "object_id": "1", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 15, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:23:41.940Z", "object_repr": "League of Legends", "object_id": "2", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 16, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:23:57.154Z", "object_repr": "Counter-Strike >> Gun", "object_id": "3", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 17, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:24:10.331Z", "object_repr": "Counter-Strike >> Map", "object_id": "4", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 18, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:24:24.101Z", "object_repr": "Counter-Strike >> Gun >> Rifles", "object_id": "5", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 19, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:24:30.510Z", "object_repr": "Counter-Strike >> Gun >> SMGs", "object_id": "6", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 20, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:24:41.940Z", "object_repr": "Counter-Strike >> Gun >> Sniper Rifles", "object_id": "7", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 21, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:24:53.374Z", "object_repr": "Counter-Strike >> Map >> Dust 2", "object_id": "8", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 22, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:24:59.559Z", "object_repr": "Counter-Strike >> Map >> Inferno", "object_id": "9", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 23, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:25:05.919Z", "object_repr": "Counter-Strike >> Map >> Mirage", "object_id": "10", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 24, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:25:11.334Z", "object_repr": "Counter-Strike >> Map >> Nuke", "object_id": "11", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 25, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:25:29.412Z", "object_repr": "League of Legends >> Role", "object_id": "12", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 26, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:25:34.344Z", "object_repr": "League of Legends >> Role >> ADC", "object_id": "13", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 27, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:25:44.334Z", "object_repr": "League of Legends >> Role >> Support", "object_id": "14", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 28, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:25:53.203Z", "object_repr": "League of Legends >> Role >> Jungle", "object_id": "15", "change_message": "", "user": 1, "content_type": 12}}, {"pk": 29, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:26:50.130Z", "object_repr": "recoil", "object_id": "1", "change_message": "", "user": 1, "content_type": 14}}, {"pk": 30, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:27:23.482Z", "object_repr": "AWP Mid", "object_id": "2", "change_message": "", "user": 1, "content_type": 14}}, {"pk": 31, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:27:47.222Z", "object_repr": "Don't let ADC die", "object_id": "3", "change_message": "", "user": 1, "content_type": 14}}, {"pk": 32, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:28:09.534Z", "object_repr": "Ganking", "object_id": "4", "change_message": "", "user": 1, "content_type": 14}}, {"pk": 33, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:28:34.169Z", "object_repr": "smoke mid", "object_id": "5", "change_message": "", "user": 1, "content_type": 14}}, {"pk": 34, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:28:48.882Z", "object_repr": "smoke b tunnel", "object_id": "6", "change_message": "", "user": 1, "content_type": 14}}, {"pk": 35, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-04-26T03:29:10.045Z", "object_repr": "smoke t ramp", "object_id": "7", "change_message": "", "user": 1, "content_type": 14}}, {"pk": 1, "model": "accounts.account", "fields": {"is_premium": false, "steam_id": "", "summoner": "", "user": 1, "picture": "account_images/None/no-image.jpg"}}, {"pk": 2, "model": "accounts.account", "fields": {"is_premium": true, "steam_id": "", "summoner": "", "user": 2, "picture": "account_images/stanPC2_tn.jpg"}}, {"pk": 3, "model": "accounts.account", "fields": {"is_premium": false, "steam_id": "", "summoner": "", "user": 3, "picture": "account_images/stanPC1_tn.jpg"}}, {"pk": 4, "model": "accounts.account", "fields": {"is_premium": true, "steam_id": "", "summoner": "", "user": 4, "picture": "account_images/stanPC3_tn.jpg"}}, {"pk": 5, "model": "accounts.account", "fields": {"is_premium": false, "steam_id": "", "summoner": "", "user": 5, "picture": "account_images/stanPC4_tn.jpg"}}, {"pk": 6, "model": "accounts.account", "fields": {"is_premium": true, "steam_id": "", "summoner": "", "user": 6, "picture": "account_images/stanPC6_tn.jpg"}}, {"pk": 7, "model": "accounts.account", "fields": {"is_premium": true, "steam_id": "caseyyah", "summoner": "caseyfoster", "user": 7, "picture": "account_images/ACD1D268-C517-4456-B30E-1CFB3AA915CC-264-000000BA0825F582.png"}}]
+[{
+    "pk": 1,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "permission",
+        "name": "permission",
+        "app_label": "auth"
+    }
+}, {
+    "pk": 2,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "group",
+        "name": "group",
+        "app_label": "auth"
+    }
+}, {
+    "pk": 3,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "user",
+        "name": "user",
+        "app_label": "auth"
+    }
+}, {
+    "pk": 4,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "contenttype",
+        "name": "content type",
+        "app_label": "contenttypes"
+    }
+}, {
+    "pk": 5,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "session",
+        "name": "session",
+        "app_label": "sessions"
+    }
+}, {
+    "pk": 6,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "site",
+        "name": "site",
+        "app_label": "sites"
+    }
+}, {
+    "pk": 7,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "comment",
+        "name": "comment",
+        "app_label": "comments"
+    }
+}, {
+    "pk": 8,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "commentflag",
+        "name": "comment flag",
+        "app_label": "comments"
+    }
+}, {
+    "pk": 9,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "logentry",
+        "name": "log entry",
+        "app_label": "admin"
+    }
+}, {
+    "pk": 10,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "migrationhistory",
+        "name": "migration history",
+        "app_label": "south"
+    }
+}, {
+    "pk": 11,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "account",
+        "name": "account",
+        "app_label": "accounts"
+    }
+}, {
+    "pk": 12,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "category",
+        "name": "category",
+        "app_label": "categories"
+    }
+}, {
+    "pk": 13,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "game",
+        "name": "game",
+        "app_label": "games"
+    }
+}, {
+    "pk": 14,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "guide",
+        "name": "guide",
+        "app_label": "guides"
+    }
+}, {
+    "pk": 15,
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "model": "contributor",
+        "name": "contributor",
+        "app_label": "contributors"
+    }
+}, {
+    "pk": "yxnidk0kmahudrxqo9f5apv94n645i04",
+    "model": "sessions.session",
+    "fields": {
+        "expire_date": "2014-05-10T02:50:11.101Z",
+        "session_data": "ZTU5NjY3ZGI0MWU4MzBkM2RlNjg0NDJkNDBkNTNmMDk5MjAxNDY2YTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6MX0="
+    }
+}, {
+    "pk": 1,
+    "model": "sites.site",
+    "fields": {
+        "domain": "example.com",
+        "name": "example.com"
+    }
+}, {
+    "pk": 1,
+    "model": "categories.category",
+    "fields": {
+        "rght": 20,
+        "name": "Counter-Strike",
+        "thumb": null,
+        "parent": null,
+        "level": 0,
+        "lft": 1,
+        "game": 2,
+        "tree_id": 1
+    }
+}, {
+    "pk": 2,
+    "model": "categories.category",
+    "fields": {
+        "rght": 10,
+        "name": "League of Legends",
+        "thumb": null,
+        "parent": null,
+        "level": 0,
+        "lft": 1,
+        "game": 1,
+        "tree_id": 2
+    }
+}, {
+    "pk": 3,
+    "model": "categories.category",
+    "fields": {
+        "rght": 9,
+        "name": "Gun",
+        "thumb": null,
+        "parent": 1,
+        "level": 1,
+        "lft": 2,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 4,
+    "model": "categories.category",
+    "fields": {
+        "rght": 19,
+        "name": "Map",
+        "thumb": null,
+        "parent": 1,
+        "level": 1,
+        "lft": 10,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 5,
+    "model": "categories.category",
+    "fields": {
+        "rght": 4,
+        "name": "Rifles",
+        "thumb": null,
+        "parent": 3,
+        "level": 2,
+        "lft": 3,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 6,
+    "model": "categories.category",
+    "fields": {
+        "rght": 6,
+        "name": "SMGs",
+        "thumb": null,
+        "parent": 3,
+        "level": 2,
+        "lft": 5,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 7,
+    "model": "categories.category",
+    "fields": {
+        "rght": 8,
+        "name": "Sniper Rifles",
+        "thumb": null,
+        "parent": 3,
+        "level": 2,
+        "lft": 7,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 8,
+    "model": "categories.category",
+    "fields": {
+        "rght": 12,
+        "name": "Dust 2",
+        "thumb": null,
+        "parent": 4,
+        "level": 2,
+        "lft": 11,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 9,
+    "model": "categories.category",
+    "fields": {
+        "rght": 14,
+        "name": "Inferno",
+        "thumb": null,
+        "parent": 4,
+        "level": 2,
+        "lft": 13,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 10,
+    "model": "categories.category",
+    "fields": {
+        "rght": 16,
+        "name": "Mirage",
+        "thumb": null,
+        "parent": 4,
+        "level": 2,
+        "lft": 15,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 11,
+    "model": "categories.category",
+    "fields": {
+        "rght": 18,
+        "name": "Nuke",
+        "thumb": null,
+        "parent": 4,
+        "level": 2,
+        "lft": 17,
+        "game": null,
+        "tree_id": 1
+    }
+}, {
+    "pk": 12,
+    "model": "categories.category",
+    "fields": {
+        "rght": 9,
+        "name": "Role",
+        "thumb": null,
+        "parent": 2,
+        "level": 1,
+        "lft": 2,
+        "game": null,
+        "tree_id": 2
+    }
+}, {
+    "pk": 13,
+    "model": "categories.category",
+    "fields": {
+        "rght": 4,
+        "name": "ADC",
+        "thumb": null,
+        "parent": 12,
+        "level": 2,
+        "lft": 3,
+        "game": null,
+        "tree_id": 2
+    }
+}, {
+    "pk": 14,
+    "model": "categories.category",
+    "fields": {
+        "rght": 8,
+        "name": "Support",
+        "thumb": null,
+        "parent": 12,
+        "level": 2,
+        "lft": 7,
+        "game": null,
+        "tree_id": 2
+    }
+}, {
+    "pk": 15,
+    "model": "categories.category",
+    "fields": {
+        "rght": 6,
+        "name": "Jungle",
+        "thumb": null,
+        "parent": 12,
+        "level": 2,
+        "lft": 5,
+        "game": null,
+        "tree_id": 2
+    }
+}, {
+    "pk": 1,
+    "model": "games.game",
+    "fields": {
+        "name": "League of Legends",
+        "official_site": "http://www.riotgames.com/"
+    }
+}, {
+    "pk": 2,
+    "model": "games.game",
+    "fields": {
+        "name": "Counter Strike",
+        "official_site": "http://www.csgo.com/"
+    }
+}, {
+    "pk": 1,
+    "model": "guides.guide",
+    "fields": {
+        "category": 5,
+        "name": "recoil",
+        "video": "https://vimeo.com/85152562",
+        "hit_count": 0,
+        "contributor": 1,
+        "description": "spray an ak"
+    }
+}, {
+    "pk": 2,
+    "model": "guides.guide",
+    "fields": {
+        "category": 8,
+        "name": "AWP Mid",
+        "video": "https://vimeo.com/87312534",
+        "hit_count": 0,
+        "contributor": 3,
+        "description": "How to pick mid, make shots & not get picked"
+    }
+}, {
+    "pk": 3,
+    "model": "guides.guide",
+    "fields": {
+        "category": 14,
+        "name": "Don't let ADC die",
+        "video": "https://vimeo.com/87312534",
+        "hit_count": 0,
+        "contributor": 4,
+        "description": "How to play decent support & not suck"
+    }
+}, {
+    "pk": 4,
+    "model": "guides.guide",
+    "fields": {
+        "category": 15,
+        "name": "Ganking",
+        "video": "https://vimeo.com/87312534",
+        "hit_count": 0,
+        "contributor": 5,
+        "description": "Ganking as a jungler"
+    }
+}, {
+    "pk": 5,
+    "model": "guides.guide",
+    "fields": {
+        "category": 8,
+        "name": "smoke mid",
+        "video": "https://vimeo.com/87312534",
+        "hit_count": 0,
+        "contributor": 2,
+        "description": "smoke mid as ct"
+    }
+}, {
+    "pk": 6,
+    "model": "guides.guide",
+    "fields": {
+        "category": 8,
+        "name": "smoke b tunnel",
+        "video": "https://vimeo.com/87312534",
+        "hit_count": 0,
+        "contributor": 2,
+        "description": "smoke b tunnel off so you can get on platform"
+    }
+}, {
+    "pk": 7,
+    "model": "guides.guide",
+    "fields": {
+        "category": 9,
+        "name": "smoke t ramp",
+        "video": "https://vimeo.com/87312534",
+        "hit_count": 0,
+        "contributor": 2,
+        "description": "Smoke off t ramp from ct spawn"
+    }
+}, {
+    "pk": 1,
+    "model": "contributors.contributor",
+    "fields": {
+        "bio": "from iBuyPower",
+        "account": 3
+    }
+}, {
+    "pk": 2,
+    "model": "contributors.contributor",
+    "fields": {
+        "bio": "Illuminati Extraordianaire",
+        "account": 2
+    }
+}, {
+    "pk": 3,
+    "model": "contributors.contributor",
+    "fields": {
+        "bio": "Snipes",
+        "account": 4
+    }
+}, {
+    "pk": 4,
+    "model": "contributors.contributor",
+    "fields": {
+        "bio": "Mad disrespect in League",
+        "account": 5
+    }
+}, {
+    "pk": 5,
+    "model": "contributors.contributor",
+    "fields": {
+        "bio": "League player",
+        "account": 6
+    }
+}, {
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+        "username": "opensorcerer",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2014-04-26T02:50:11.046Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$LQlZQYzdFgel$l1HMTgFJAgeFGYQ/gb1B2DXrm9cR0MuGW44/T/fsSVM=",
+        "email": "",
+        "date_joined": "2014-04-26T02:49:48.044Z"
+    }
+}, {
+    "pk": 2,
+    "model": "auth.user",
+    "fields": {
+        "username": "casey",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2014-04-26T02:55:18.595Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$nV0dJaoAZE9v$4DnNqpKx7n2yL5wmWEdUKOfJbI8CR+PFcdoJH6Q+lqA=",
+        "email": "",
+        "date_joined": "2014-04-26T02:55:18.595Z"
+    }
+}, {
+    "pk": 3,
+    "model": "auth.user",
+    "fields": {
+        "username": "dazed",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2014-04-26T02:56:38.676Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$rE7nbn5cEPgW$WXQ6VJ/0Midkc/9jX5Ek5ozxT/VvHLeqNVyHOCaS85w=",
+        "email": "",
+        "date_joined": "2014-04-26T02:56:38.676Z"
+    }
+}, {
+    "pk": 4,
+    "model": "auth.user",
+    "fields": {
+        "username": "shazham",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2014-04-26T02:57:15.023Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$0LesCz8lwH1W$Ifp+U0o0erJEESt+WK3Rp0zg4Mzj+ZE7G+Oav1DZLbw=",
+        "email": "",
+        "date_joined": "2014-04-26T02:57:15.023Z"
+    }
+}, {
+    "pk": 5,
+    "model": "auth.user",
+    "fields": {
+        "username": "trick2g",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2014-04-26T02:57:34.939Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$N80Yer83ikzH$ZGBJvdXN7vhA3JYKtgTLfzWvyUnPhumjmFDIpPkebGU=",
+        "email": "",
+        "date_joined": "2014-04-26T02:57:34.939Z"
+    }
+}, {
+    "pk": 6,
+    "model": "auth.user",
+    "fields": {
+        "username": "voyboy",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2014-04-26T02:57:58.651Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$TxGD35rulY0S$6P5xnDo6uJIkByoDJgZIwb9/uh/tnIWR3IqwxC3C5kc=",
+        "email": "",
+        "date_joined": "2014-04-26T02:57:58.651Z"
+    }
+}, {
+    "pk": 7,
+    "model": "auth.user",
+    "fields": {
+        "username": "demoing",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2014-04-26T02:58:44.415Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$FsoFQ9cYZscR$mFQW7EI9qZT3TY/NGL5uFbhwbORpZPVvhXlaCNMDF5M=",
+        "email": "",
+        "date_joined": "2014-04-26T02:58:44.415Z"
+    }
+}, {
+    "pk": 1,
+    "model": "accounts.account",
+    "fields": {
+        "is_premium": false,
+        "steam_id": "",
+        "summoner": "",
+        "user": 1,
+        "picture": "account_images/None/no-image.jpg"
+    }
+}, {
+    "pk": 2,
+    "model": "accounts.account",
+    "fields": {
+        "is_premium": true,
+        "steam_id": "",
+        "summoner": "",
+        "user": 2,
+        "picture": "account_images/stanPC2_tn.jpg"
+    }
+}, {
+    "pk": 3,
+    "model": "accounts.account",
+    "fields": {
+        "is_premium": false,
+        "steam_id": "",
+        "summoner": "",
+        "user": 3,
+        "picture": "account_images/stanPC1_tn.jpg"
+    }
+}, {
+    "pk": 4,
+    "model": "accounts.account",
+    "fields": {
+        "is_premium": true,
+        "steam_id": "",
+        "summoner": "",
+        "user": 4,
+        "picture": "account_images/stanPC3_tn.jpg"
+    }
+}, {
+    "pk": 5,
+    "model": "accounts.account",
+    "fields": {
+        "is_premium": false,
+        "steam_id": "",
+        "summoner": "",
+        "user": 5,
+        "picture": "account_images/stanPC4_tn.jpg"
+    }
+}, {
+    "pk": 6,
+    "model": "accounts.account",
+    "fields": {
+        "is_premium": true,
+        "steam_id": "",
+        "summoner": "",
+        "user": 6,
+        "picture": "account_images/stanPC6_tn.jpg"
+    }
+}, {
+    "pk": 7,
+    "model": "accounts.account",
+    "fields": {
+        "is_premium": true,
+        "steam_id": "caseyyah",
+        "summoner": "caseyfoster",
+        "user": 7,
+        "picture": "account_images/ACD1D268-C517-4456-B30E-1CFB3AA915CC-264-000000BA0825F582.png"
+    }
+}]

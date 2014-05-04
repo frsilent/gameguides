@@ -6,8 +6,8 @@
     {% block content %}
         <h3>Lesson Form</h3>
 
-        <form method="post">
-            {{ form|crispy }}
+        <form method="post" class="bootstrap">
+            {% crispy form %}
         </form>
     {% endblock content %}
 </div>

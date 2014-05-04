@@ -1,20 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.utils import timezone
 
 from models import Guide, GuideFilter
-
-
-class GuideListView(ListView):
-    model = Guide
-
-    def get_context_data(self, **kwargs):
-        context = super(GuideListView, self).get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        return context
 
 
 class GuideDetailView(DetailView):
@@ -36,6 +26,9 @@ class GuideDetailView(DetailView):
 #         context_instance=RequestContext(request)
 #     )
 
+
 def guide_list(request):
-    f = GuideFilter(request.GET, queryset=Guide.objects.all())
-    return render_to_response('guides/guide_list.html', {'filter': f})
+    top5 = Guide.objects.all().order_by('hit_count')[:5]
+    print top5
+    filter = GuideFilter(request.GET, queryset=Guide.objects.all())
+    return render_to_response('guides/guide_list.html', locals(), context_instance=RequestContext(request))

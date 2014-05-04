@@ -5,17 +5,37 @@
 {
     height: 70px;
 }
+.navbar-nav > li > a
+{
+    margin-top: 10px;
+}
 .navbar-brand
 {
     max-width: 60%;
 }
 /* END OVERRIDES BOOTSTRAP */
 
-footer {
+footer
+{
     background-color: #5c5c5c;
     padding: 40px 0 50px;
+    font-size: 12px;
+    color: rgb(150,150,150);
     /*height: 100px;*/
 }
+footer ul
+{
+    list-style-type: none;
+    margin: 0;
+    white-space: normal;
+    display: inline;
+}
+footer ul a
+{
+    display:block;
+    width:60px;
+}
+
 
 /* Index Page */
 #demo-video {
@@ -90,21 +110,33 @@ footer {
 /* END Index Page */
 
 /* Contributor Page */
-.player-bar {
+.player-bar
+{
     height: 100px;
     width: 400px;
     margin-bottom: 2px;
     background-color: #CFE2F3;
 }
-.player-image {
+.player-image
+{
     float: left;
 }
 /* END Contributor Page */
 
 /* Guide Page */
-ul.video-details {
+ul.video-details
+{
     list-style-type: none;
     margin: 0;
     padding: 0;
     float: left;
 }
+#top5-pane, #filter-pane
+{
+    background-color: #CFE2F3;
+}
+#filter-pane
+{
+    margin-top: 20px;
+}
+/* END Guide Page */
