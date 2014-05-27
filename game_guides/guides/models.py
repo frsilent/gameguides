@@ -37,6 +37,10 @@ class GuideFilter(django_filters.FilterSet):
         model = Guide
         fields = ['category']
 
+    def __init__(self, *args, **kwargs):
+        super(GuideFilter, self).__init__(*args, **kwargs)
+        print self.filters
+        # self.filters['category'].extra.update({'category': 'All Manufacturers'})
 
     # cs = Category.objects.get(name="Counter-Strike")
     # category = django_filters.ModelChoiceFilter(queryset=cs.get_descendants().filter(level=2))

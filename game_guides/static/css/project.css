@@ -134,9 +134,10 @@ ul.video-details
 #top5-pane, #filter-pane
 {
     background-color: #CFE2F3;
-}
-#filter-pane
-{
     margin-top: 20px;
+}
+.thumbnail a img
+{
+    height: 300px;
 }
 /* END Guide Page */

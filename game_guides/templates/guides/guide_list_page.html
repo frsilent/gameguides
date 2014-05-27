@@ -1,0 +1,11 @@
+{% load endless %}
+
+{% paginate 3 filtered_guides %}
+{% for entry in filtered_guides %}
+    {{ entry }}
+{% endfor %}
+{% show_pages %}
+{#<h2>Guides:</h2>#}
+{#{% for guide in filtered_guides %}#}
+{#    {{ guide }}#}
+{#{% endfor %}#}

@@ -1,8 +1,9 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.views.generic.detail import DetailView
 from django.utils import timezone
+
+from endless_pagination.decorators import page_template
 
 from models import Guide, GuideFilter
 
@@ -17,18 +18,17 @@ class GuideDetailView(DetailView):
         context = super(GuideDetailView, self).get_context_data(**kwargs)
         context['now'] = timezone.now()
         return context
-# def guides(request):
-#     # top5 = Guide.objects.all()[:5]
-#     # print top5
-#     return render_to_response(
-#         'guides/index.html',
-#         locals(),
-#         context_instance=RequestContext(request)
-#     )
 
 
-def guide_list(request):
-    top5 = Guide.objects.all().order_by('hit_count')[:5]
-    print top5
-    filter = GuideFilter(request.GET, queryset=Guide.objects.all())
-    return render_to_response('guides/guide_list.html', locals(), context_instance=RequestContext(request))
+@page_template('guides/guide_list_page.html')
+def guide_list(request, template='guides/guide_list.html', extra_context=None):
+
+    context = {
+        'top5': Guide.objects.all().order_by('hit_count')[:5],
+        'filtered_guides': GuideFilter(request.GET, queryset=Guide.objects.all()),
+        # 'filtered_guides': GuideFilter(request.GET.get('category', None), queryset=Guide.objects.all()),
+    }
+
+    if extra_context is not None:
+        context.update(extra_context)
+    return render_to_response(template, context, context_instance=RequestContext(request))

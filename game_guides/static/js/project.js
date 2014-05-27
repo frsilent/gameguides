@@ -6,7 +6,7 @@ $(document).ready(function() {
         var url = $(this).data('url');
         var player = $('#video-player').children('iframe');
         player.attr('src', url);
-        return false;
+//        return false;
     });
 });
 /* END Index Page */

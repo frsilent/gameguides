@@ -81,7 +81,7 @@
                         {% video guide.video as vid %}
                         <div class="col-xs-6 col-md-4">
                             <a class="thumbnail sample-video" data-url="{{ vid.url }}">
-                              <img data-src="holder.js/100%x180" alt="100%x180" src="{{ vid.thumbnail }}">
+                              <img src="{{ vid.thumbnail }}" />
                             </a>
                         </div>
                         {% endvideo %}
@@ -116,22 +116,4 @@
             </div>
         </div>
     </div>
-
-{#    <footer>#}
-{#        <div class="container_16">#}
-{#            <div class="grid_8">#}
-{#                <ul>#}
-{#                    <li><a href="http://www.netcodeilluminati.com/register/">Sign Up</a></li>#}
-{#                    <li><a id="log-in2" href="#">Log In</a></li>#}
-{#                    <li><a href="http://www.netcodeilluminati.com/forums/">Forum</a></li>#}
-{#                </ul>#}
-{#                <p>© Copyright 2014, NetcodeGuides.com. All trademarks are property of their respective owners in the US and other countries.</p>#}
-{#            </div>#}
-{#            <div class="grid_8">#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="clear"></div>#}
-{#    </footer>#}
-{##}
-{#  </div>#}
-{% endblock base %}
+{% endblock %}

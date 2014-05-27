@@ -1,20 +1,16 @@
 {% extends 'base.html' %}
 {% load embed_video_tags %}
+{% load endless %}
 
 {% block page_title %}Guides Page{% endblock page_title %}
 {% block content %}
     <div class="row" id="top5-pane">
-        <div class="first-video" id="video-player">
-            {% video top5.1.video as vid %}
-            {% video vid 'tiny' %}
-            {% endvideo %}
-        </div>
         <div class="sample-video-container">
-            {% for guide in top5|slice:"1:" %}
+            {% for guide in top5 %}
                 {% video guide.video as vid %}
-                <div class="col-xs-6 col-md-4">
-                    <a class="thumbnail sample-video" data-url="{{ vid.url }}">
-                        <img data-src="holder.js/100%x180" alt="100%x180" src="{{ vid.thumbnail }}">
+                <div class="col-xs-6 col-md-4 {% if forloop.first %}first-video{% endif %}">
+                    <a class="thumbnail sample-video" href="{% url 'guide-detail' guide.id %}">
+                        <img src="{{ vid.thumbnail }}">
                     </a>
                 </div>
                 {% endvideo %}
@@ -22,40 +18,53 @@
         </div>
     </div>
     <div class="row" id="filter-pane">
-        {% block filters %}
-            <div class="filter-list">
-                {% for category in filter.get_category %}
-                    <a href="/guides/?category={{ category.id }}">
-                    <img src="{{ MEDIA_URL }}{{ category.thumb }}">
+        <div class="filter-list">
+            {% for category in filtered_guides.get_category %}
+                <a href="/guides/?category={{ category.id }}">
+                <img src="{{ MEDIA_URL }}{{ category.thumb }}">
+                </a>
+            {% endfor %}
+        </div>
+{% comment %}
+        <div class="filtered-guides">
+            {% for guide in filtered_guides %}
+                {% video guide.video as vid %}
+                <div class="col-xs-6 col-md-4">
+                    <a class="thumbnail sample-video" href="{% url 'guide-detail' guide.id %}">
+                        <img src="{{ vid.thumbnail }}">
                     </a>
-                {% endfor %}
-            </div>
-        {% endblock %}
-
-        {% for guide in filter %}
-            <div class="guide-bar">
-                <span><a href="{% url 'guide-detail' guide.id %}">{{ guide.name }}</a></span>
-            </div>
-        {% endfor %}
-
+                </div>
+                {% endvideo %}
+            {% endfor %}
+        </div>
+{% endcomment %}
+        <div class="filtered-guides">
+            {% paginate 2 filtered_guides %}
+            {% get_pages %}
+            {{ pages.previous }}{{ pages.next }}
+            <ul>{% for i in filtered_guides %}<li>{{ i }}</li>{% endfor %}</ul>
+        </div>
     </div>
 
-
-    <h3>Want to contribute? Apply Here Link</h3>
+{#    <div class="row" id="filtered_videosss">#}
+{#    {% paginate 2 filtered_guides %}#}
+{#    {% get_pages %}#}
+{#    {{ pages.previous }}#}
+{#    {% for i in filtered_guides %}#}
+{#        {% video i.video as vid %}#}
+{#        <div class="col-xs-2 col-md-2">#}
+{#            <a class="thumbnail sample-video" href="{% url 'guide-detail' i.id %}">#}
+{#                <img src="{{ vid.thumbnail }}" />#}
+{#            </a>#}
+{#        </div>#}
+{#        {% endvideo %}#}
+{#    {% endfor %}#}
+{#    {{ pages.next }}#}
+{#    </div>#}
 {% endblock content %}
 
-{% comment %}
-TODO: Eventually replace the costly get_guides_all with some kind of pagination.
-      Endless Pagination example below:
-
-        {% load endless %}
-
-        {% paginate entries %}
-        {% for entry in entries %}
-            {# your code to show the entry #}
-        {% endfor %}
-        {% show_pages %}
-
-
-{% extends "base.html" %}
-{% endcomment %}
+{% block extra_js %}
+    {{ block.super }}
+    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+    <script>$.endlessPaginate();</script>
+{% endblock %}
