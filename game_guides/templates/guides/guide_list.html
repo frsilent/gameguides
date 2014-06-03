@@ -22,11 +22,17 @@
     </div>
     <div class="row" id="filter-pane">
 
-    <div ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
+    <div class="row" id="filter-pane" ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
+        <div class="filter-list">
+            {% for category in filtered_guides.get_category %}
+                <a ng-click="filters.category = {{ category.id }}">
+                <img src="{{ MEDIA_URL }}{{ category.thumb }}">
+                </a>
+            {% endfor %}
+        </div>
     {% verbatim %}
-        <h5>Create a New Post</h5>
         <ul>
-            <li ng-repeat="guide in guides">{{ guide.name }}</li>
+            <li ng-repeat="guide in guides | filter:filters">{{ guide.name }}</li>
         </ul>
     {% endverbatim %}
     </div>
