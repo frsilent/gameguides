@@ -181,6 +181,7 @@ THIRD_PARTY_APPS = (
     'mptt',  # Handles hierarchical data for the guides, categories, etc
     'django_filters',  # Used for filtering in ListViews
     'crispy_forms',  # Used for clean and uniform form styling
+    'rest_framework'  # Restful Endpoint
 )
 
 # Apps specific for this project go here.
@@ -192,6 +193,7 @@ LOCAL_APPS = (
     'games',
     'guides',
     'lessons',
+    'api',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -237,3 +239,16 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 ########## END WSGI CONFIGURATION
 
 CRISPY_TEMPLATE_PACK = 'bootstrap'
+
+REST_FRAMEWORK = {
+    # Use hyperlinked styles by default.
+    # Only used if the `serializer_class` attribute is not set on a view.
+    'DEFAULT_MODEL_SERIALIZER_CLASS':
+        'rest_framework.serializers.HyperlinkedModelSerializer',
+
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% load embed_video_tags %}
 {% load endless %}
+{% load staticfiles %}
 
 {% block page_title %}Guides Page{% endblock page_title %}
+{% block ng_app %}ng-app="guides.list"{% endblock %}
+
 {% block content %}
     <div class="row" id="top5-pane">
         <div class="sample-video-container">
@@ -18,53 +21,41 @@
         </div>
     </div>
     <div class="row" id="filter-pane">
-        <div class="filter-list">
-            {% for category in filtered_guides.get_category %}
-                <a href="/guides/?category={{ category.id }}">
-                <img src="{{ MEDIA_URL }}{{ category.thumb }}">
-                </a>
-            {% endfor %}
-        </div>
-{% comment %}
-        <div class="filtered-guides">
-            {% for guide in filtered_guides %}
-                {% video guide.video as vid %}
-                <div class="col-xs-6 col-md-4">
-                    <a class="thumbnail sample-video" href="{% url 'guide-detail' guide.id %}">
-                        <img src="{{ vid.thumbnail }}">
-                    </a>
-                </div>
-                {% endvideo %}
-            {% endfor %}
-        </div>
-{% endcomment %}
-        <div class="filtered-guides">
-            {% paginate 2 filtered_guides %}
-            {% get_pages %}
-            {{ pages.previous }}{{ pages.next }}
-            <ul>{% for i in filtered_guides %}<li>{{ i }}</li>{% endfor %}</ul>
-        </div>
+
+    <div ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
+    {% verbatim %}
+        <h5>Create a New Post</h5>
+        <ul>
+            <li ng-repeat="guide in guides">{{ guide.name }}</li>
+        </ul>
+    {% endverbatim %}
     </div>
 
-{#    <div class="row" id="filtered_videosss">#}
-{#    {% paginate 2 filtered_guides %}#}
-{#    {% get_pages %}#}
-{#    {{ pages.previous }}#}
-{#    {% for i in filtered_guides %}#}
-{#        {% video i.video as vid %}#}
-{#        <div class="col-xs-2 col-md-2">#}
-{#            <a class="thumbnail sample-video" href="{% url 'guide-detail' i.id %}">#}
-{#                <img src="{{ vid.thumbnail }}" />#}
-{#            </a>#}
+
+
+
+    </div>
+{#    <div class="row" id="filter-pane">#}
+{#        <div class="filter-list">#}
+{#            {% for category in filtered_guides.get_category %}#}
+{#                <a href="/guides/?category={{ category.id }}">#}
+{#                <img src="{{ MEDIA_URL }}{{ category.thumb }}">#}
+{#                </a>#}
+{#            {% endfor %}#}
 {#        </div>#}
-{#        {% endvideo %}#}
-{#    {% endfor %}#}
-{#    {{ pages.next }}#}
+{#        <div class="filtered-guides">#}
+{#            {% paginate 2 filtered_guides %}#}
+{#            {% get_pages %}#}
+{#            {{ pages.previous }}{{ pages.next }}#}
+{#            <ul>{% for i in filtered_guides %}<li>{{ i }}</li>{% endfor %}</ul>#}
+{#        </div>#}
 {#    </div>#}
 {% endblock content %}
 
 {% block extra_js %}
     {{ block.super }}
-    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
-    <script>$.endlessPaginate();</script>
+    <script src="{% static 'js/guide-list.js' %}"></script>
+{#    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>#}
+{#    <script>$.endlessPaginate();</script>#}
 {% endblock %}
+

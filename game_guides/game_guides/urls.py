@@ -17,6 +17,8 @@ urlpatterns = patterns('',
     url(r'^lessons/', include('lessons.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
 
+    url(r'^api/', include('api.urls')),
+
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
 
