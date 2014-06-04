@@ -9,3 +9,4 @@ class GuideSerializer(serializers.ModelSerializer):
     class Meta:
         model = Guide
         fields = ('id', 'name', 'category')
+        read_only_fields = ('id', 'name', 'category')
