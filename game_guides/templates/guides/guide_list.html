@@ -20,48 +20,28 @@
             {% endfor %}
         </div>
     </div>
-    <div class="row" id="filter-pane">
 
     <div class="row" id="filter-pane" ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
         <div class="filter-list">
-            {% for category in filtered_guides.get_category %}
-                <a ng-click="filters.category = {{ category.id }}">
-                <img src="{{ MEDIA_URL }}{{ category.thumb }}">
-                </a>
-            {% endfor %}
+            <a ng-click="filters.category = undefined">
+                <img src="{{ MEDIA_URL }}/all.png" />
+            </a>
+        {% for category in filtered_guides.get_category %}
+            <a ng-click="filters.category = {{ category.id }}">
+            <img src="{{ MEDIA_URL }}{{ category.thumb }}" />
+            </a>
+        {% endfor %}
         </div>
-    {% verbatim %}
+        {% verbatim %}
         <ul>
             <li ng-repeat="guide in guides | filter:filters">{{ guide.name }}</li>
         </ul>
-    {% endverbatim %}
+        {% endverbatim %}
     </div>
-
-
-
-
-    </div>
-{#    <div class="row" id="filter-pane">#}
-{#        <div class="filter-list">#}
-{#            {% for category in filtered_guides.get_category %}#}
-{#                <a href="/guides/?category={{ category.id }}">#}
-{#                <img src="{{ MEDIA_URL }}{{ category.thumb }}">#}
-{#                </a>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#        <div class="filtered-guides">#}
-{#            {% paginate 2 filtered_guides %}#}
-{#            {% get_pages %}#}
-{#            {{ pages.previous }}{{ pages.next }}#}
-{#            <ul>{% for i in filtered_guides %}<li>{{ i }}</li>{% endfor %}</ul>#}
-{#        </div>#}
-{#    </div>#}
 {% endblock content %}
 
 {% block extra_js %}
     {{ block.super }}
     <script src="{% static 'js/guide-list.js' %}"></script>
-{#    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>#}
-{#    <script>$.endlessPaginate();</script>#}
 {% endblock %}
 

@@ -136,6 +136,12 @@ ul.video-details
     background-color: #CFE2F3;
     margin-top: 20px;
 }
+.filter-list
+{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 .thumbnail a img
 {
     height: 300px;
