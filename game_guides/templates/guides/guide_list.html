@@ -5,6 +5,7 @@
 
 {% block page_title %}Guides Page{% endblock page_title %}
 {% block ng_app %}ng-app="guides.list"{% endblock %}
+{% block title %}Game Guides - Guides{% endblock title %}
 
 {% block content %}
     <div class="row" id="top5-pane">
@@ -23,10 +24,10 @@
 
     <div class="row" id="filter-pane" ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
         <div class="filter-list">
-            <a ng-click="filters.category = undefined">
-                <img src="{{ MEDIA_URL }}/all.png" />
-            </a>
-        {% for category in filtered_guides.get_category %}
+{#            <a ng-click="filters.category = undefined">#}
+{#                <img src="{{ MEDIA_URL }}/all.png" />#}
+{#            </a>#}
+        {% for category in categories %}
             <a ng-click="filters.category = {{ category.id }}">
             <img src="{{ MEDIA_URL }}{{ category.thumb }}" />
             </a>

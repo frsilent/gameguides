@@ -5,7 +5,8 @@ from django.utils import timezone
 
 from endless_pagination.decorators import page_template
 
-from models import Guide, GuideFilter
+from models import Guide
+from categories.models import Category
 
 
 class GuideDetailView(DetailView):
@@ -25,8 +26,7 @@ def guide_list(request, template='guides/guide_list.html', extra_context=None):
 
     context = {
         'top5': Guide.objects.all().order_by('hit_count')[:5],
-        'filtered_guides': GuideFilter(request.GET, queryset=Guide.objects.all()),
-        # 'filtered_guides': GuideFilter(request.GET.get('category', None), queryset=Guide.objects.all()),
+        'categories': Category.objects.all(),
     }
 
     if extra_context is not None:

@@ -1,9 +1,6 @@
 from django.db import models
 
 from embed_video.fields import EmbedVideoField
-import django_filters
-
-from categories.models import Category
 
 
 class Guide(models.Model):
@@ -17,34 +14,13 @@ class Guide(models.Model):
     name = models.CharField(max_length=128, default='', blank=True)
     description = models.CharField(max_length=2048)
     hit_count = models.IntegerField(default=0)
-    video = EmbedVideoField(blank=True)  # Need to make this not required
+    video = EmbedVideoField(blank=True)
 
     contributor = models.ForeignKey('contributors.Contributor')
-    category = models.ForeignKey('categories.Category')
+    categories = models.ManyToManyField('categories.Category', related_name='categories')
 
     def suggested_videos(self):
         return Guide.objects.filter(category=self.category).order_by('hit_count')
 
     def __unicode__(self):
         return unicode(self.name)
-
-
-class GuideFilter(django_filters.FilterSet):
-    """
-    Class to handle filtering for guides
-    """
-    class Meta:
-        model = Guide
-        fields = ['category']
-
-    def __init__(self, *args, **kwargs):
-        super(GuideFilter, self).__init__(*args, **kwargs)
-        print self.filters
-        # self.filters['category'].extra.update({'category': 'All Manufacturers'})
-
-    # cs = Category.objects.get(name="Counter-Strike")
-    # category = django_filters.ModelChoiceFilter(queryset=cs.get_descendants().filter(level=2))
-
-    def get_category(self):
-        cs = Category.objects.get(name="Counter-Strike")
-        return cs.get_descendants().filter(level=2)
