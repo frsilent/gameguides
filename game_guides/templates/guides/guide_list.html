@@ -30,10 +30,11 @@
         {% endfor %}
         </div>
         {% verbatim %}
+        <h2>{{currentPage+1}}/{{numberOfPages()}}</h2>
         <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
         <ul>
             <li ng-repeat="guide in guides | filter: category_filter |
-                filter:paginate:currentPage * pageSize | limitTo:pageSize">{{ guide.name }}</li>
+                paginate:currentPage * pageSize | limitTo:pageSize">{{ guide.name }}</li>
         </ul>
         <button ng-disabled="currentPage >= guides.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
         {% endverbatim %}

@@ -10,20 +10,12 @@ app.controller('GuideListController', ['$scope', '$http', '$filter', function($s
         });
     });
 
-    // Pagination
+    // Pagination uses the app 'paginate' function
     $scope.currentPage = 0;
     $scope.pageSize = 2;
-    $scope.numberOfPage = function() {
-        return Math.ceil($scope.guides.length/$scope.pagesSize);
+    $scope.numberOfPages = function() {
+        return Math.ceil($scope.guides.length/$scope.pageSize);
     }
-    $scope.paginate = function() {
-        return function(input, start) {
-            start = +start;
-            return input.slice(start);
-        }
-    }
-
-
 
     $scope.toggleCategory = function(category_id) {
         // Adds or removes a category id from $scope.categories
@@ -47,6 +39,15 @@ app.controller('GuideListController', ['$scope', '$http', '$filter', function($s
     };
 
 }]);
+
+app.filter('paginate', function() {
+    return function(input, start) {
+        start = +start; //parse to int
+        return input.slice(start);
+    }
+});
+
+
 
 // TODO: Use this to fix pagination & filtering:
 // http://jsfiddle.net/2ZzZB/56/
