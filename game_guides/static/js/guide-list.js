@@ -13,7 +13,6 @@ app.controller('GuideListController', ['$scope', '$http', '$filter', function($s
     // Pagination uses the app 'paginate' function
     $scope.currentPage = 0;
     $scope.pageSize = 2;
-    $scope.Math = window.Math; // Adds Math functions in template bindings
 
     $scope.toggleCategory = function(category_id) {
         // Adds or removes a category id from $scope.categories
@@ -23,6 +22,7 @@ app.controller('GuideListController', ['$scope', '$http', '$filter', function($s
         } else {
             $scope.categories.push(category_id);
         };
+        $scope.currentPage = 0;
     };
 
     $scope.category_filter = function(guide) {

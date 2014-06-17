@@ -8,41 +8,79 @@
 {% block title %}Game Guides - Guides{% endblock title %}
 
 {% block content %}
-    <div class="row" id="top5-pane">
+    <div id="top5-pane">
         <div class="sample-video-container">
-            {% for guide in top5 %}
+            <div class="row-fluid">
+                {% for guide in top5|slice:':2' %}
                 {% video guide.video as vid %}
-                <div class="col-xs-6 col-md-4 {% if forloop.first %}first-video{% endif %}">
-                    <a class="thumbnail sample-video" href="{% url 'guide-detail' guide.id %}">
-                        <img src="{{ vid.thumbnail }}">
-                    </a>
-                </div>
+                    <div class=" guide-thumbnail {% if forloop.first %}col-md-7 first-video{% else %}col-md-5 pull-down{% endif %}">
+                        <a class="thumbnail sample-video" href="{% url 'guide-detail' guide.id %}">
+                            <img src="{{ vid.thumbnail }}">
+                        </a>
+                    </div>
                 {% endvideo %}
-            {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="row-fluid">
+                {% for guide in top5|slice:'2:' %}
+                {% video guide.video as vid %}
+                    <div class="guide-thumbnail col-md-4">
+                        <a class="thumbnail sample-video" href="{% url 'guide-detail' guide.id %}">
+                            <img src="{{ vid.thumbnail }}">
+                        </a>
+                    </div>
+                {% endvideo %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 
-    <div class="row" id="filter-pane" ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
+    <div id="filter-pane" ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
         <div class="filter-list">
         {% for category in categories %}
             <input type="checkbox" ng-click="toggleCategory({{ category.id }})">
             {{ category.name }}
         {% endfor %}
         </div>
-        {% verbatim %}
-        <h2>{{ currentPage+1 }} / {{ Math.ceil((guides|filter:category_filter).length / pageSize) }}</h2>
 
-        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
-        <ul>
-            <li ng-repeat="guide in guides | filter: category_filter |
-                           paginate:currentPage * pageSize | limitTo:pageSize">{{ guide.name }}</li>
-        </ul>
-        <button ng-disabled="currentPage >= (guides|filter:category_filter).length / pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
+        {% verbatim %}
+        <h2>{{ currentPage+1 }} / {{ ((guides|filter:category_filter).length / pageSize) | number:0 }}</h2>
+
+        <div class="row-fluid guides-filtered">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-default btn-lg" ng-disabled="currentPage == 0"
+                        ng-click="currentPage=currentPage-1">
+                    <span class="glyphicon glyphicon-arrow-left"></span>
+                </button>
+            </div>
+
+            <div class="col-md-8">
+                <ul>
+                    <li ng-repeat="guide in guides | filter: category_filter |
+                                   paginate:currentPage * pageSize | limitTo:pageSize">{{ guide.name }}</li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+                <button type="button" class="btn btn-default btn-lg"
+                                ng-disabled="currentPage >= (guides|filter:category_filter).length / pageSize - 1"
+                                ng-click="currentPage=currentPage+1">
+                    <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+        </div>
+
         {% endverbatim %}
+
     </div>
 {% endblock content %}
 
 {% block extra_js %}
     {{ block.super }}
     <script src="{% static 'js/guide-list.js' %}"></script>
+    <script>
+        $('.pull-down').each(function() {
+            $(this).css('margin-top', $(this).parent().height()-$(this).height()-20);
+        });
+    </script>
 {% endblock %}

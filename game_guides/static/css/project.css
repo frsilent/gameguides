@@ -134,14 +134,21 @@ ul.video-details
 #top5-pane, #filter-pane
 {
     background-color: #CFE2F3;
+}
+#filter-pane
+{
+    margin-bottom: 20px;
     margin-top: 20px;
+}
+.guide-thumbnail {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .filter-list
 {
     margin-top: 20px;
     margin-left: 20px;
 }
-
 .thumbnail a img
 {
     height: 300px;
