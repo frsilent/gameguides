@@ -13,9 +13,7 @@ app.controller('GuideListController', ['$scope', '$http', '$filter', function($s
     // Pagination uses the app 'paginate' function
     $scope.currentPage = 0;
     $scope.pageSize = 2;
-    $scope.numberOfPages = function() {
-        return Math.ceil($scope.guides.length/$scope.pageSize);
-    }
+    $scope.Math = window.Math; // Adds Math functions in template bindings
 
     $scope.toggleCategory = function(category_id) {
         // Adds or removes a category id from $scope.categories
@@ -46,11 +44,3 @@ app.filter('paginate', function() {
         return input.slice(start);
     }
 });
-
-
-
-// TODO: Use this to fix pagination & filtering:
-// http://jsfiddle.net/2ZzZB/56/
-// http://stackoverflow.com/questions/11581209/angularjs-pagination-on-a-list-using-ng-repeater
-// http://jsfiddle.net/SAWsA/11/
-
