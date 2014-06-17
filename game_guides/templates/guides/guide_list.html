@@ -25,16 +25,17 @@
     <div class="row" id="filter-pane" ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
         <div class="filter-list">
         {% for category in categories %}
-{#            <input type="checkbox" ng-model="categories" ng-click="categories.{{ category.id }} = true">#}
             <input type="checkbox" ng-click="toggleCategory({{ category.id }})">
-{#            <input type="checkbox" ng-model="categories[{{ forloop.counter }}]" ng-checked="categories[{{ forloop.counter }}].checked">#}
             {{ category.name }}
         {% endfor %}
         </div>
         {% verbatim %}
+        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
         <ul>
-            <li ng-repeat="guide in guides | filter: category_filter: true">{{ guide.name }}{{ guide.categories }}</li>
+            <li ng-repeat="guide in guides | filter: category_filter |
+                filter:paginate:currentPage * pageSize | limitTo:pageSize">{{ guide.name }}</li>
         </ul>
+        <button ng-disabled="currentPage >= guides.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
         {% endverbatim %}
     </div>
 {% endblock content %}
