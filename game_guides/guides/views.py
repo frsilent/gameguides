@@ -23,10 +23,11 @@ class GuideDetailView(DetailView):
 
 @page_template('guides/guide_list_page.html')
 def guide_list(request, template='guides/guide_list.html', extra_context=None):
+    cs = Category.objects.get(id=1)  # Counter-strike
 
     context = {
         'top5': Guide.objects.all().order_by('hit_count')[:5],
-        'categories': Category.objects.all(),
+        'categories': cs.get_descendants().filter(level=2),
     }
 
     if extra_context is not None:

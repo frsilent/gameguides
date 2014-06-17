@@ -24,18 +24,16 @@
 
     <div class="row" id="filter-pane" ng-controller="{% block ng_controller %}GuideListController{% endblock %}">
         <div class="filter-list">
-{#            <a ng-click="filters.category = undefined">#}
-{#                <img src="{{ MEDIA_URL }}/all.png" />#}
-{#            </a>#}
         {% for category in categories %}
-            <a ng-click="filters.category = {{ category.id }}">
-            <img src="{{ MEDIA_URL }}{{ category.thumb }}" />
-            </a>
+{#            <input type="checkbox" ng-model="categories" ng-click="categories.{{ category.id }} = true">#}
+            <input type="checkbox" ng-click="toggleCategory({{ category.id }})">
+{#            <input type="checkbox" ng-model="categories[{{ forloop.counter }}]" ng-checked="categories[{{ forloop.counter }}].checked">#}
+            {{ category.name }}
         {% endfor %}
         </div>
         {% verbatim %}
         <ul>
-            <li ng-repeat="guide in guides | filter:filters">{{ guide.name }}</li>
+            <li ng-repeat="guide in guides | filter: category_filter: true">{{ guide.name }}{{ guide.categories }}</li>
         </ul>
         {% endverbatim %}
     </div>
@@ -45,4 +43,3 @@
     {{ block.super }}
     <script src="{% static 'js/guide-list.js' %}"></script>
 {% endblock %}
-
