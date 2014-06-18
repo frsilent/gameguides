@@ -12,7 +12,7 @@ app.controller('GuideListController', ['$scope', '$http', '$filter', function($s
 
     // Pagination uses the app 'paginate' function
     $scope.currentPage = 0;
-    $scope.pageSize = 2;
+    $scope.pageSize = 6;
 
     $scope.toggleCategory = function(category_id) {
         // Adds or removes a category id from $scope.categories

@@ -140,7 +140,12 @@ ul.video-details
     margin-bottom: 20px;
     margin-top: 20px;
 }
-.guide-thumbnail {
+.guides-filtered
+{
+    margin-bottom: 20px;
+}
+.guide-thumbnail
+{
     margin-top: 20px;
     margin-bottom: 20px;
 }

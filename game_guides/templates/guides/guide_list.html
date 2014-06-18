@@ -14,7 +14,7 @@
                 {% for guide in top5|slice:':2' %}
                 {% video guide.video as vid %}
                     <div class=" guide-thumbnail {% if forloop.first %}col-md-7 first-video{% else %}col-md-5 pull-down{% endif %}">
-                        <a class="thumbnail sample-video" href="{% url 'guide-detail' guide.id %}">
+                        <a class="thumbnail sample-video" href="{% url 'guide-detailing' guide.id %}">
                             <img src="{{ vid.thumbnail }}">
                         </a>
                     </div>
@@ -25,7 +25,7 @@
                 {% for guide in top5|slice:'2:' %}
                 {% video guide.video as vid %}
                     <div class="guide-thumbnail col-md-4">
-                        <a class="thumbnail sample-video" href="{% url 'guide-detail' guide.id %}">
+                        <a class="thumbnail sample-video" href="{% url 'guide-detailing' guide.id %}">
                             <img src="{{ vid.thumbnail }}">
                         </a>
                     </div>
@@ -45,6 +45,7 @@
 
         {% verbatim %}
         <h2>{{ currentPage+1 }} / {{ ((guides|filter:category_filter).length / pageSize) | number:0 }}</h2>
+        {% endverbatim %}
 
         <div class="row-fluid guides-filtered">
             <div class="col-md-2">
@@ -55,10 +56,16 @@
             </div>
 
             <div class="col-md-8">
-                <ul>
-                    <li ng-repeat="guide in guides | filter: category_filter |
-                                   paginate:currentPage * pageSize | limitTo:pageSize">{{ guide.name }}</li>
-                </ul>
+                <div class="col-xs-6 col-md-4" ng-repeat="guide in guides | filter: category_filter |
+                                                paginate: currentPage * pageSize | limitTo:pageSize">
+                    {% verbatim %}
+                    <a class="thumbnail sample-video" href="/guides/{{ guide.id }}">
+                        <img src="{{ guide.thumb }}" />
+                    </a>
+                    <label>{{ guide.name }}</label>
+                    {% endverbatim %}
+
+                </div>
             </div>
 
             <div class="col-md-2">
@@ -70,7 +77,6 @@
             </div>
         </div>
 
-        {% endverbatim %}
 
     </div>
 {% endblock content %}
@@ -82,5 +88,7 @@
         $('.pull-down').each(function() {
             $(this).css('margin-top', $(this).parent().height()-$(this).height()-20);
         });
+
+
     </script>
 {% endblock %}
