@@ -1,5 +1,7 @@
-from django.conf.urls import patterns, url
-from django.contrib.auth.views import login, logout
+from django.conf.urls import patterns, url, include
+
+from accounts.views import Login, Logout
+
 
 urlpatterns = patterns('accounts.views',
     url(r'^$', 'accounts', name='accounts-dashboard'),
@@ -7,6 +9,6 @@ urlpatterns = patterns('accounts.views',
 
     # Django Defaults
 
-    url(r'^login/$', login, {'template_name': 'accounts/login.html'}),
-    url(r'^logout/$', logout, {'template_name': 'accounts/logout.html'}),
+    url(r'^login/$', Login),
+    url(r'^logout/$', Logout),
 )

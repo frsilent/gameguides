@@ -6,4 +6,6 @@ from accounts.models import Account
 class AccountForm(forms.ModelForm):
     class Meta:
         model = Account
-        fields = ('steam_id', 'summoner', 'picture')
+        exclude = ('user',)
+        # fields = ('steam_id', 'summoner', 'picture')
+4

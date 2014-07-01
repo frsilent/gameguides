@@ -51,8 +51,12 @@
                 <li><a href="{% url 'contributor-list' %}">Contributors</a></li>
                 <li><a href="{% url 'lesson-booking' %}">Lessons</a></li>
             </ul>
+{#            <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'index' %}">Home</a></button>#}
+{#            <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'guide-listing' %}">Videos</a></button>#}
+{#            <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'contributor-list' %}">Contributors</a></button>#}
+{#            <button type="button" class="btn btn-default navbar-btn"><a href="{% url 'lesson-booking' %}">Lessons</a></button>#}
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#"><span>{{ request.user }}</span></a></li>
+                <li><a href="{% url 'accounts-dashboard' %}"><span>{{ request.user }}</span></a></li>
                 <li><a href="#upgrade">Upgrade</a></li>
                 <li><a href="#logout">Logout</a></li>
             </ul>

@@ -1,0 +1,2 @@
+Your activation key is {{ activation_key }}.
+You have {{ expiration_days }} to complete registration.

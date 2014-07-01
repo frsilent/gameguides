@@ -1,69 +1,72 @@
 {% extends 'base.html' %}
+{% block title %}Game Guides - Account{% endblock title %}
 
-{% block page_title %}Weclome {{ user }}!{% endblock page_title %}
-
-{% block content %}
-    {% comment %}
-    <ul>
-        <li>Account info</li>
-        <li>Change Password</li>
-        <li>Change email</li>
-        <li>Referrals</li>
-        <li>Tips (if pro)</li>
-        <li>Trial Codes</li>
-        <li>Support</li>
-    </ul>
-    <div>
-        <h2>Block styled to right</h2>
-        <span>Account Information</span>
-        <ul>
-            <li>Username</li>
-            <li>Premium Member</li>
-            <li>Else Upgrade Account Now Option</li>
-            <li>Update payment information, last transaction, type, date</li>
-        </ul>
-    </div>
-    {% endcomment %}
-    <form>
-        {{ form }}
-    </form>
-
-{% endblock content %}
-
-{% comment %}
-
-{% block navigation %}
-    {% with 'stores' as menu_select %}
-        {{ block.super }}
-    {% endwith %}
-{% endblock %}
-
-{% block content %}
-    <div class="row">
-        <div class="container third">
-            <div class="grid">
-                <h3 style="margin-bottom: 10px;">Choice Sets</h3>
-                <ul class="navigation-list">
-                    {% for choice_set in choice_sets %}
-                        <li {% if choice_set.id == curr_choice_set.id %} class="current" {% endif %}>
-                            <a href="{% menu_url 'core-edit_choice_set' choice_set_id=choice_set.id %}">{{ choice_set.name }}</a>
-                        </li>
-                    {% endfor %}
+{% block base %}
+<div id="panel" class="container">
+    {% block content %}
+        <div class="row-fluid">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked submenu">
+                    <li class="active"><a href="#pill-info" data-toggle="pill">Account info</a></li>
+                    <li><a href="#pill-password" data-toggle="pill">Change password</a></li>
+                    <li><a href="#pill-email" data-toggle="pill">Change email</a></li>
+                    <li><a href="#pill-referrals" data-toggle="pill">Referrals</a></li>
+                    {% if request.user.contributor %}<li><a href="#pill-tips" data-toggle="pill">Tips (if contributor)</a></li>{% endif %}
+                    <li><a href="#pill-trials" data-toggle="pill">Trial codes</a></li>
+                    <li><a href="#pill-support" data-toggle="pill">Support</a></li>
                 </ul>
-                <a id="add-new-store" href="{% menu_url 'core-add_choice_set' %}">
-                    <strong>Add Choice Set +</strong>
-                </a>
             </div>
-        </div>
-
-        <div class="container twothird">
-            <div class="grid">
-                {% block right_column %}
-
-                {% endblock %}
+            <div class="col-md-7 pill-content">
+                <div id="pill-info" class="pill-pane active">
+                    <h4>Account information</h4>
+                    <div>
+                        <ul>
+                            <li>{{ request.user }}</li>
+                            {% if request.user.account.is_premium %}
+                                <li>Premium User</li>
+                                <h5>Last Payment Information:</h5>
+                                <li>transaction link, type, date</li>
+                            {% else %}
+                                <li><a href="#">Upgrade Now</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div id="pill-password" class="pill-pane">
+                    {{ password_form }}
+                </div>
+                <div id="pill-email" class="pill-pane">
+                    {{ user_form.email.label }}
+                    {{ user_form.email }}
+                    {{ user_form.email }}
+                </div>
+                <div id="pill-referrals" class="pill-pane">
+                    <p>
+                        List of referrals they've made. Account name & premium status.
+                        May need an overflow as this list will be big for pro players.
+                        Once user has 20 successful referrals (players registered for premium) flag account.
+                        Admin will be notified & can then promote user to a contributor/pro.
+                    </p>
+                </div>
+                <div id="pill-tips" class="pill-pane">
+                    <p>
+                        Record of tips from users. Possibly an iframe to 3rd-party ecommerce solution.
+                    </p>
+                </div>
+                <div id="pill-trials" class="pill-pane">
+                    <p>
+                        User can hand out a unique url/code to people to test out a premium account for 24 hours,
+                        or limit the amount of videos they can watch if that can be securely done.
+                        If trial user purchases Premium, the initial user earns a % of the first month purchase
+                    </p>
+                </div>
+                <div id="pill-support" class="pill-pane">
+                    <h3>Redirect or popup to prompt for user support submission.</h3>
+                </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
-    </div>
+    {% endblock content %}
+</div>
 {% endblock %}
-
-{% endcomment %}

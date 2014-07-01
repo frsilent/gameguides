@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 
     # # Django App URLs:
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^accounts/', include('registration.backends.default.urls')),  # TODO: May not be the right place for this
     url(r'^contributors/', include('contributors.urls')),
     url(r'^guides/', include('guides.urls')),
     url(r'^lessons/', include('lessons.urls')),

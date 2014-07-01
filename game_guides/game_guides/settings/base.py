@@ -181,8 +181,11 @@ THIRD_PARTY_APPS = (
     'mptt',  # Handles hierarchical data for the guides, categories, etc
     'django_filters',  # Used for filtering in ListViews
     'crispy_forms',  # Used for clean and uniform form styling
-    'rest_framework'  # Restful Endpoint
+    'rest_framework',  # Restful Endpoint
+    'registration'  # Packed to handle user registration with email confirmation
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7  # one week activation window for user registration
 
 # Apps specific for this project go here.
 LOCAL_APPS = (

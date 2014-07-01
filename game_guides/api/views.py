@@ -5,6 +5,7 @@ from api.serializers import GuideSerializer, CategorySerializer
 from guides.models import Guide
 from categories.models import Category
 
+
 class GuideViewSet(viewsets.ModelViewSet):
     """
     API Endpoint to view all guides
